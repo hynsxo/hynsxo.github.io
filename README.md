@@ -2,7 +2,7 @@
 
 <img width="150" alt="profile" src="https://github.com/user-attachments/assets/28456edb-0d89-4f1f-8875-fe290c158b99" />
 
-# 이현서 포트폴리오 (Lee Hyeonseo)
+# 이현서 (Lee Hyeonseo)
 
 실행이 곧 나를 만든다.<br>시행착오 속에서 배우며 성장 흐름을 만듭니다.
 
