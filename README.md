@@ -1,6 +1,6 @@
 <div align="center">
 
-<img width="150" alt="profile" src="https://github.com/user-attachments/assets/28456edb-0d89-4f1f-8875-fe290c158b99" />
+<img width="150" alt="profile" src="profile-preview.png" />
 
 # 이현서 (Lee Hyeonseo)
 
