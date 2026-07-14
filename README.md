@@ -8,7 +8,7 @@
 
 **인하대학교 컴퓨터공학과 (GPA 4.02 / 4.5)** | 임베디드 · 시스템 · 데이터 분석
 
-📧 hyunseo379@hanmail.net
+📧 hynsxo@gmail.com
 
 </div>
 
