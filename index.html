@@ -1,99 +1,391 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:title" content="이현서">
-  <meta property="og:description" content="이현서의 포트폴리오입니다.">
-  <meta property="og:image" content="https://hynsxo.github.io/preview.png">
-  <meta property="og:url" content="https://hynsxo.github.io/">
-  <title>이현서</title>
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.1/github-markdown.min.css">
-  
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이현서 — 포트폴리오</title>
+<meta name="description" content="GPA 4.02 | 임베디드 · 시스템 · 데이터 분석 엔지니어 이현서의 포트폴리오입니다.">
+<meta property="og:title" content="이현서 | 개발자 포트폴리오">
+<meta property="og:description" content="실행이 곧 나를 만든다. 시행착오 속에서 배우며 성장 흐름을 만드는 시스템 엔지니어입니다.">
+<meta property="og:url" content="https://hynsxo.github.io/">
+<meta property="og:image" content="https://hynsxo.github.io/profile-preview.png">
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #ffffff;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- 한국어 폰트 최적화를 위한 Pretendard 로드 -->
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v3.2.1/dist/web/variable/pretendardvariable.css" />
 
-    .langbar {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 24px 45px 0 45px;
-      display: flex;
-      justify-content: flex-end;
-    }
+<style>
+  :root{
+    --paper:#F6F5F0;
+    --paper-raised:#FBFAF7;
+    --ink:#1D2430;
+    --ink-soft:#4A5568;
+    --ink-faint:#7A8394;
+    --signal:#2C6E8E;
+    --signal-tint:#E1EBEF;
+    --accent-warm:#A9662A;
+    --line:#DCD8CC;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', 'Pretendard Variable', 'Apple SD Gothic Neo', Arial, sans-serif;
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .langbar{
+    max-width:760px;
+    margin:0 auto;
+    padding:18px 24px 0 24px;
+    display:flex;
+    justify-content:flex-end;
+  }
+  .langbar a{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.03em;
+    color:var(--ink-soft);
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
+    padding-bottom:1px;
+  }
+  .langbar a:hover{ color:var(--signal); border-color:var(--signal); }
 
-    .langbar a {
-      font-family: monospace;
-      font-size: 13px;
-      color: #57606a;
-      text-decoration: none;
-      border-bottom: 1px solid #d0d7de;
-      padding-bottom: 1px;
-    }
+  .wrap{ max-width:760px; margin:0 auto; padding:8px 24px 80px 24px; }
 
-    .langbar a:hover {
-      color: #0969da;
-      border-color: #0969da;
-    }
+  header.hero{ text-align:center; padding:28px 0 6px 0; }
+  .avatar{
+    width:84px; height:84px; border-radius:50%;
+    object-fit:cover; margin:0 auto 18px auto; display:block;
+    border:1px solid var(--line);
+  }
+  h1.name{
+    font-family:'Space Grotesk', 'Pretendard Variable', sans-serif;
+    font-weight:700;
+    font-size:2.3rem;
+    letter-spacing:-0.01em;
+    margin:0 0 10px 0;
+    color:var(--ink);
+  }
+  .tagline{
+    font-size:1.02rem;
+    color:var(--ink-soft);
+    max-width:480px;
+    margin:0 auto 14px auto;
+  }
+  .roleline{
+    font-family:'IBM Plex Mono', 'Pretendard Variable', monospace;
+    font-size:13px;
+    color:var(--ink-faint);
+    letter-spacing:0.01em;
+  }
+  .roleline a{ color:var(--signal); text-decoration:none; border-bottom:1px solid var(--signal-tint); }
 
-    .markdown-body {
-      box-sizing: border-box;
-      min-width: 200px;
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 20px 45px 45px 45px;
-    }
+  .wave{ display:block; width:100%; height:28px; margin:26px 0 34px 0; }
+  .wave path{ fill:none; stroke:var(--signal); stroke-width:2; }
+  @media (prefers-reduced-motion: no-preference){
+    .wave path.animate{ transition:none; }
+  }
 
-    @media (max-width: 767px) {
-      .markdown-body {
-        padding: 15px;
-      }
-      .langbar {
-        padding: 15px 15px 0 15px;
-      }
-    }
+  h2.section{
+    font-family:'Space Grotesk', 'Pretendard Variable', sans-serif;
+    font-weight:600;
+    font-size:0.9rem;
+    text-transform:uppercase;
+    letter-spacing:0.12em;
+    color:var(--ink-faint);
+    margin:0 0 16px 0;
+  }
+  .block{ margin-bottom:44px; }
+  .block:last-child{ margin-bottom:0; }
 
-    @media (prefers-color-scheme: dark) {
-      body {
-        background-color: #0d1117;
-      }
-      .langbar a {
-        color: #8b949e;
-        border-color: #30363d;
-      }
-      .langbar a:hover {
-        color: #58a6ff;
-        border-color: #58a6ff;
-      }
+  .about p{ margin:0 0 14px 0; color:var(--ink); }
+  .about p:last-child{ margin-bottom:0; }
+  .about .thesis{
+    background:var(--signal-tint);
+    border-left:2.5px solid var(--signal);
+    padding:12px 16px;
+    border-radius:2px;
+    color:var(--ink);
+    font-weight:500;
+  }
+
+  .entry{ padding:20px 0; border-top:1px solid var(--line); }
+  .entry:first-child{ border-top:none; padding-top:0; }
+  .entry-eyebrow{
+    display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:6px;
+    font-family:'IBM Plex Mono', 'Pretendard Variable', monospace;
+    font-size:12px;
+    color:var(--signal);
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .entry-date{ color:var(--ink-faint); }
+  .entry-title{
+    font-family:'Space Grotesk', 'Pretendard Variable', sans-serif;
+    font-weight:600;
+    font-size:1.14rem;
+    margin:0 0 2px 0;
+    color:var(--ink);
+  }
+  .entry-org{ color:var(--ink-soft); font-size:0.92rem; margin-bottom:10px; }
+  .tags{ display:flex; flex-wrap:wrap; gap:6px; margin-bottom:12px; }
+  .tag{
+    font-family:'IBM Plex Mono', 'Pretendard Variable', monospace;
+    font-size:11px;
+    background:white; border:1px solid var(--line); border-radius:3px;
+    padding:1px 6px; color:var(--ink-soft);
+  }
+  .entry-lead{ font-weight:500; font-size:0.96rem; color:var(--ink); margin:0 0 10px 0; }
+  .entry ul{ margin:0 0 12px 0; padding-left:18px; color:var(--ink-soft); font-size:0.92rem; }
+  .entry li{ margin-bottom:5px; padding-left:4px; }
+  .entry li::marker{ color:var(--signal); }
+  .entry-outcome{ margin:0; font-size:0.92rem; color:var(--ink); padding:8px 12px; background:var(--paper-raised); border-radius:3px; }
+
+  .skills-grid{
+    display:grid; grid-template-columns:120px 1fr; gap:10px 16px;
+    border-top:1px solid var(--line); padding-top:20px; font-size:0.92rem;
+  }
+  .skills-grid dt{ font-weight:600; color:var(--ink); padding-top:1px; }
+  .skills-grid dd{ margin:0; color:var(--ink-soft); }
+
+  .edu-item{ border-top:1px solid var(--line); padding-top:20px; }
+  .edu-school{ font-family:'Space Grotesk', 'Pretendard Variable', sans-serif; font-weight:600; font-size:1.1rem; }
+  .edu-gpa{ color:var(--signal); font-weight:500; font-size:0.9rem; margin-top:2px; }
+  .edu-detail{ font-size:0.9rem; color:var(--ink-soft); margin-top:8px; line-height:1.6; }
+  .edu-detail strong{ color:var(--ink); font-weight:500; }
+
+  .two-col{ display:grid; grid-template-columns:1fr 1fr; gap:30px; border-top:1px solid var(--line); padding-top:20px; }
+  .list-block ul{ list-style:none; padding:0; margin:0; }
+  .list-block li{ font-size:0.92rem; color:var(--ink-soft); margin-bottom:6px; padding-left:12px; position:relative; }
+  .list-block li::before{
+    content:"—"; position:absolute; left:0; color:var(--line);
+    font-family:'IBM Plex Mono', monospace; font-size:10px; top:1px;
+  }
+  .list-block strong{ color:var(--ink); font-weight:500; }
+
+  footer{ text-align:center; padding-top:24px; border-top:1px solid var(--line); margin-top:12px; }
+  .footer-note{
+    font-family:'IBM Plex Mono', 'Pretendard Variable', monospace;
+    font-size:11px; color:var(--ink-faint); margin:0; letter-spacing:0.02em;
+  }
+
+  @media (max-width:540px){
+    h1.name{ font-size:1.8rem; }
+    .tagline{ font-size:0.96rem; }
+    .skills-grid{ grid-template-columns:1fr; gap:4px; }
+    .skills-grid dt{ padding-top:12px; }
+    .two-col{ grid-template-columns:1fr; gap:20px; }
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#12151B; --paper-raised:#1A1E26; --ink:#E9ECF2;
+      --ink-soft:#A3AEC1; --ink-faint:#6B768B; --signal:#5DA3C8;
+      --signal-tint:#1F2E3A; --accent-warm:#D0915B; --line:#2E3643;
     }
-  </style>
+    .tag{ background:var(--paper-raised); }
+  }
+</style>
 </head>
 <body>
-  <div class="langbar"><a href="https://hynsxo.github.io/en/">English Version →</a></div>
 
-  <div id="content" class="markdown-body">로딩 중...</div>
+<div class="langbar"><a href="https://hynsxo.github.io/en/">English Version →</a></div>
 
-  <script>
-    fetch('README.md')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('README.md 파일을 불러오지 못했습니다.');
-        }
-        return response.text();
-      })
-      .then(text => {
-        document.getElementById('content').innerHTML = marked.parse(text);
-      })
-      .catch(err => {
-        document.getElementById('content').innerHTML = `<p style="color: red;">오류 발생: ${err.message}</p>`;
-      });
-  </script>
+<div class="wrap">
+  <header class="hero">
+    <img class="avatar" src="profile-preview.png" alt="이현서" onerror="this.style.display='none'">
+    <h1 class="name">이현서</h1>
+    <p class="tagline">실행이 곧 나를 만든다.<br>시행착오 속에서 배우며 성장 흐름을 만듭니다.</p>
+    <div class="roleline">인하대학교 컴퓨터공학과 (GPA 4.02 / 4.5) &nbsp;·&nbsp; 임베디드 · 시스템 · 데이터 분석 &nbsp;·&nbsp; <a href="mailto:hynsxo@gmail.com">hynsxo@gmail.com</a></div>
+  </header>
+
+  <svg class="wave" viewBox="0 0 700 24" preserveAspectRatio="none">
+    <path id="wavePath" d="M0 12 Q58 24 116 12 T232 12 T348 12 T464 12 T580 12 T696 12 L700 12"></path>
+  </svg>
+
+  <section class="block about">
+    <h2 class="section">About</h2>
+    <p>드럼 연주 로봇의 팔이 미세하게 어긋나는 이유를 추적하다, 결국 통신 프로토콜 문서를 처음부터 다시 읽어야 했습니다. 그 과정에서 필요했던 물리학과 전공 수업까지 들었고, 우수한 성적으로 마쳤습니다.</p>
+    <div class="thesis">
+      돌아보면 제가 겪은 프로젝트들은 결국 같은 질문으로 이어져 있었습니다. "이 데이터는 지금 어디서 와서, 어디로, 얼마나 정확하게 흘러가고 있는가." 로봇의 CAN 통신이든, UAM 항로의 소음 데이터든, 은행의 해외송금 파이프라인이든, 차량 간 V2V 통신이든 — 분야만 다를 뿐 확인하는 방식은 늘 같았습니다.
+    </div>
+    <p style="margin-top:14px;">익숙한 전공 지식만으로 안 풀리면 물리학 수업이든 프로토콜 스펙 문서든 가리지 않고 파고듭니다. 아래 프로젝트들은 그 과정에서 제가 어떤 선택을 했고, 무엇을 배웠는지에 대한 기록입니다.</p>
+  </section>
+
+  <section class="block">
+    <h2 class="section">Experience & Projects</h2>
+
+    <div class="entry">
+      <div class="entry-eyebrow"><span>🤖 로보틱스 / 임베디드</span><span class="entry-date">2024.12 &ndash; 2025.02</span></div>
+      <div class="entry-title">한국과학기술연구원(KIST) 인공지능연구단 학부 현장실습</div>
+      <div class="entry-org">10자유도 양팔 드럼 연주 로봇</div>
+      <div class="tags"><span class="tag">C/C++</span><span class="tag">CAN(CANopen) 통신</span><span class="tag">GDB</span></div>
+      <p class="entry-lead">로봇 팔의 움직임이 부자연스러운 원인을 끝까지 추적한 결과, 진짜 문제는 하드웨어가 아니라 <strong>제어 모드 전환 시의 통신 지연</strong>이었습니다. 이 구조를 SDO 통신 기반으로 재설계해 개발 기간을 약 2개월 단축시켰습니다.</p>
+      <ul>
+        <li>포지션↔토크 제어 모드 전환 시마다 모터 위치값 동기화가 늦어지는 것을 확인, 기존 PDO 방식만으로는 실시간성이 부족하다고 판단</li>
+        <li>SDO 통신으로 모터 실시간 위치값을 직접 수집하는 하이브리드 통신 구조를 제안·구현</li>
+        <li>로봇 허리 움직임을 최소화하는 궤적 생성 알고리즘(다익스트라 + 보간법) 개발, 모터 PID 튜닝, GDB로 시스템 취약점 디버깅</li>
+        <li>GitHub 컨벤션 기반 버전 관리 체계를 구축해 협업 환경 조성</li>
+      </ul>
+      <p class="entry-outcome">자연스러운 드럼 타격 동작을 구현했고, 전체 코드 흐름을 연주 상태 기반 다이어그램으로 정리해 이후 합류하는 사람도 바로 이해할 수 있도록 남겼습니다. 통신 프로토콜 문서를 처음부터 다시 읽어야 했던 것도 이 프로젝트였습니다 — 익숙한 방식이 안 통하면 기초로 돌아간다는 걸 배운 경험입니다.</p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-eyebrow"><span>🏦 금융 시스템</span><span class="entry-date">2025.07 &ndash; 2025.08</span></div>
+      <div class="entry-title">IBK기업은행 IT금융개발부 청년인턴</div>
+      <div class="entry-org">33기 우수 인턴 선정</div>
+      <div class="tags"><span class="tag">금융 시스템 아키텍처 분석</span><span class="tag">서비스 설계</span></div>
+      <p class="entry-lead">해외송금 시 수취계좌를 잘못 입력하면 전신료가 낭비되고 사후 처리에 인력이 소모된다는 구조적 문제를 발견하고, <strong>사전 검증 서비스</strong>를 제안했습니다 — 실제 개발 안건으로 채택되었습니다.</p>
+      <ul>
+        <li>대규모 은행 계정계 시스템의 데이터 파이프라인을 분석해 아키텍처 데이터흐름을 도식화</li>
+        <li>SWIFT Pre-validation, 내부 송금 이력 데이터, 룰 기반 필터링을 결합한 3중 검증 프로세스(Data-driven · API · Rule-based) 설계</li>
+        <li>아이디어 제안에 그치지 않고 실제 시스템 구조에 맞는 구현 가능성까지 검토해 제안서 작성</li>
+      </ul>
+      <p class="entry-outcome">인턴이 낸 제안이 실제 개발 안건으로 이어지는 경우는 흔치 않습니다. 이 제안은 IBK기업은행 33기 우수 인턴 선정으로 이어졌습니다.</p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-eyebrow"><span>🚗 자율주행</span><span class="entry-date">2025.10 &ndash; 2026.02</span></div>
+      <div class="entry-title">KAIST 모빌리티 챌린지 본선진출상</div>
+      <div class="entry-org">팀 카스피 — V2V·V2I 협력 자율주행, LiDAR</div>
+      <div class="tags"><span class="tag">V2V·V2I</span><span class="tag">LiDAR</span></div>
+      <p class="entry-lead">여러 대의 차량이 각자 알아서 판단하는 대신, 차량 간 통신으로 미리 조율하는 협력 주행 구조를 구현했습니다. 그중 제가 맡은 부분은 <strong>사거리 교차로에서 어떤 차량이 먼저 지나갈지를 결정하는 우선순위 판단 알고리즘</strong>이었습니다.</p>
+      <ul>
+        <li>라이다 센서를 활용한 소형 차량의 협력 자율주행 기술 구현에 참여</li>
+        <li>사거리 교차로 상황에서 차량 간 위치·속도 데이터를 기준으로 통행 우선순위를 결정하는 알고리즘을 직접 설계</li>
+        <li>다수 차량이 동시에 진입하는 상황에서도 충돌 없이 교차로를 통과하도록 로직 검증</li>
+      </ul>
+      <p class="entry-outcome">KAIST 모빌리티 연구소장 본선진출상을 수상했습니다.</p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-eyebrow"><span>📊 데이터 분석</span><span class="entry-date">2024.04 &ndash; 2024.08</span></div>
+      <div class="entry-title">국토·교통 데이터 활용 경진대회</div>
+      <div class="entry-org">한국공항공사 사장상 (우수상)</div>
+      <div class="tags"><span class="tag">Python</span><span class="tag">OpenCV</span></div>
+      <p class="entry-lead">UAM(도심항공교통)이 상용화되려면 성능만큼이나 <strong>주민들이 실제로 받아들일 수 있는 소음 수준</strong>이 관건이라 판단해, 데이터 기반 소음 절감 항로 모델을 제안했습니다.</p>
+      <ul>
+        <li>천만 건 규모의 교통 데이터를 분석해 지역별 인구 밀도, 시간대, 소음 민감도를 수치화</li>
+        <li>OpenCV로 지도 이미지를 처리해 지역별 소음 민감도 가중치를 산출, 항로 설계 알고리즘에 반영</li>
+        <li>소음 민감 지역을 우회하면서도 비행 효율을 크게 해치지 않는 항로 설계 로직을 완성해 UAM 항로 모델의 표준안으로 제시</li>
+      </ul>
+      <p class="entry-outcome">단순 최단 경로가 아니라 "누가 소음 피해를 보는가"를 변수로 넣은 게 이 프로젝트의 차별점이었고, 이 접근으로 한국공항공사 사장상을 수상했습니다.</p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-eyebrow"><span>🔬 컴퓨터 비전</span><span class="entry-date">2024-1학기</span></div>
+      <div class="entry-title">CVIP 컴퓨터비전 연구실 학부연구생</div>
+      <div class="entry-org">실시간 인원 인식 기반 자동 온도 제어 시스템</div>
+      <div class="tags"><span class="tag">OpenCV</span><span class="tag">YOLOv5</span></div>
+      <p class="entry-lead">기존 냉방 시스템은 사람이 있든 없든 같은 온도를 유지해 전력을 낭비한다는 점에 착안해, <strong>실시간 인원 인식 기반 자동 온도 제어 시스템</strong>을 설계했습니다.</p>
+      <ul>
+        <li>스탠퍼드 CS231n 커리큘럼으로 신호처리와 이미지 분류·검출 이론을 독학</li>
+        <li>YOLOv5 기반 실시간 사람 수 인식 모델을 구현하고, 에어컨 API와 연동해 인원 수에 따라 온도가 자동으로 바뀌는 구조를 완성</li>
+      </ul>
+      <p class="entry-outcome">전공 수업(CS231n)에서 배운 이론을 처음으로 손에 잡히는 시스템으로 옮겨본 경험이었습니다.</p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-eyebrow"><span>🌏 커뮤니티</span><span class="entry-date">2024.03 &ndash; 2026.06</span></div>
+      <div class="entry-title">인하대 국제학부 SGCS 근로장학생</div>
+      <div class="entry-org">외국인 학생 응대 · 행사 기획 (3년)</div>
+      <p class="entry-lead">한국어가 서툰 유학생에게는 사소한 행정 실수 하나가 비자 문제로 번질 수 있습니다. 매번 "이 학생 입장에서 지금 가장 급한 게 뭘까"부터 확인하는 걸 원칙으로 삼았습니다.</p>
+      <ul>
+        <li>3년간 비자 연장, 주거 문제 등 한국 생활 행정을 영어로 안내·상담</li>
+        <li>약속한 처리 기한은 반드시 지키는 방식으로 신뢰를 쌓아, 담당 교직원으로부터 "어디서든 환영받을 사람"이라는 평가를 받음</li>
+        <li>다양한 국적과 배경의 학생·교직원과 협업하며 글로벌 커뮤니케이션 역량을 키움</li>
+      </ul>
+      <p class="entry-outcome">이 경험은 이후 IBK 인턴에서 "이 서비스를 받는 사람 입장에서 무엇이 문제인가"를 먼저 보는 습관으로 이어졌습니다.</p>
+    </div>
+
+  </section>
+
+  <section class="block">
+    <h2 class="section">Skills</h2>
+    <dl class="skills-grid">
+      <dt>Languages</dt>
+      <dd>C/C++, Python, Java</dd>
+      <dt>Domain</dt>
+      <dd>임베디드 시스템, CAN(CANopen) 통신, 컴퓨터비전, 데이터 분석, 금융 시스템 분석</dd>
+      <dt>Frameworks</dt>
+      <dd>OpenCV, ROS2, CUDA, OpenMP, FastAPI</dd>
+      <dt>Tools</dt>
+      <dd>Linux (Ubuntu), GDB, CMake, Git/GitHub</dd>
+      <dt>Science Base</dt>
+      <dd>컴퓨터기반선형대수, 현대물리학, 수리물리학 수강</dd>
+    </dl>
+  </section>
+
+  <section class="block">
+    <h2 class="section">Education</h2>
+    <div class="edu-item">
+      <div class="edu-school">인하대학교 컴퓨터공학과</div>
+      <div class="edu-gpa">GPA 4.02 / 4.5</div>
+      <div class="edu-detail">
+        <strong>우수 이수 과목:</strong> 오퍼레이팅시스템(A+), 컴퓨터네트워크(A+), 컴퓨터구조론(A+), 시스템프로그래밍(A+), 인공지능(A+), 현대물리학(A+), 컴퓨터기반선형대수(A+), 자바기반응용프로그래밍(A+), 리눅스 프로그래밍(A), 수리물리학(A) — 우수한 성적으로 이수
+      </div>
+    </div>
+  </section>
+
+  <section class="block two-col">
+    <div class="list-block">
+      <h2 class="section">Certifications</h2>
+      <ul>
+        <li><strong>정보처리기사</strong> (2026.09.11 합격자 발표 예정)</li>
+        <li><strong>운전면허</strong> 1종 보통·대형, 2종 소형</li>
+        <li><strong>한국사능력검정시험</strong> 1급</li>
+        <li><strong>TOPCIT Practitioner</strong> (Lv.3, 501점)</li>
+      </ul>
+    </div>
+    <div class="list-block">
+      <h2 class="section">Awards &amp; Scholarships</h2>
+      <ul>
+        <li>해성문화재단 전액장학금 (2024-1)</li>
+        <li>인하대 정석 북튜버 영상후기 공모전 장려상 (2025)</li>
+        <li>한국공항공사 사장상 (국토·교통 데이터 활용 경진대회, 2024)</li>
+        <li>인하대 컴퓨터공학과 성적우수 장학금 (2025-1)</li>
+        <li>울산연구원 우수장학금 (2025-1, 2025-2, 2026-1)</li>
+        <li>KAIST 모빌리티 연구소 챌린지 본선진출상 (2026)</li>
+        <li>인하대 소프트웨어융합대학 성적우수상 (2026)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block list-block" style="border-top:1px solid var(--line); padding-top:20px;">
+    <h2 class="section">Activities</h2>
+    <ul>
+      <li>대한민국 육군 병장 만기전역 (2022.01 &ndash; 2023.07)</li>
+      <li>인하대 국제학부 SGCS 근로장학생 (2024.03 &ndash; 2026.06) — 외국인 학생 비자·주거 상담 및 교내 행사 기획</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p class="footer-note">hynsxo.github.io</p>
+  </footer>
+</div>
+
+<script>
+  // 마우스를 움직일 때 상단의 물결(wave)이 일렁이는 가벼운 애니메이션
+  const wave = document.getElementById('wavePath');
+  let frameId;
+  document.addEventListener('mousemove', (e) => {
+    cancelAnimationFrame(frameId);
+    frameId = requestAnimationFrame(() => {
+      const p = e.clientX / window.innerWidth;
+      const depth = (p - 0.5) * 40; 
+      wave.setAttribute('d', `M0 12 Q58 ${24+depth} 116 12 T232 12 T348 12 T464 12 T580 12 T696 12 L700 12`);
+      wave.classList.add('animate');
+    });
+  });
+</script>
 
 </body>
 </html>
