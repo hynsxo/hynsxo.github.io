@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hyeonseo Lee — Portfolio</title>
-    <meta name="description"
-        content="Hyeonseo Lee — Computer Engineering, Inha University. Embedded systems, real-time protocol debugging, and data-driven engineering projects.">
+    <meta name="description" content="Hyeonseo Lee — Computer Engineering, Inha University. Embedded systems, real-time protocol debugging, and data-driven engineering projects.">
     <meta property="og:title" content="Hyeonseo Lee — Portfolio">
-    <meta property="og:description"
-        content="Computer Engineering graduate working in embedded systems, real-time communication protocols, and data-driven engineering.">
+    <meta property="og:description" content="Computer Engineering graduate working in embedded systems, real-time communication protocols, and data-driven engineering.">
     <meta property="og:url" content="https://hynsxo.github.io/en/">
     <meta property="og:image" content="../profile-preview.png">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --paper: #F6F5F0;
@@ -30,14 +27,8 @@
             --line: #DCD8CC;
         }
 
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             margin: 0;
             background: var(--paper);
@@ -55,7 +46,6 @@
             display: flex;
             justify-content: flex-end;
         }
-
         .langbar a {
             font-family: 'IBM Plex Mono', monospace;
             font-size: 12.5px;
@@ -65,33 +55,16 @@
             border-bottom: 1px solid var(--line);
             padding-bottom: 1px;
         }
+        .langbar a:hover { color: var(--signal); border-color: var(--signal); }
 
-        .langbar a:hover {
-            color: var(--signal);
-            border-color: var(--signal);
-        }
+        .wrap { max-width: 760px; margin: 0 auto; padding: 8px 24px 80px 24px; }
 
-        .wrap {
-            max-width: 760px;
-            margin: 0 auto;
-            padding: 8px 24px 80px 24px;
-        }
-
-        header.hero {
-            text-align: center;
-            padding: 28px 0 6px 0;
-        }
-
+        header.hero { text-align: center; padding: 28px 0 6px 0; }
         .avatar {
-            width: 84px;
-            height: 84px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 18px auto;
-            display: block;
+            width: 84px; height: 84px; border-radius: 50%;
+            object-fit: cover; margin: 0 auto 18px auto; display: block;
             border: 1px solid var(--line);
         }
-
         h1.name {
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 700;
@@ -100,44 +73,24 @@
             margin: 0 0 10px 0;
             color: var(--ink);
         }
-
         .tagline {
             font-size: 1.02rem;
             color: var(--ink-soft);
             max-width: 480px;
             margin: 0 auto 14px auto;
         }
-
         .roleline {
             font-family: 'IBM Plex Mono', monospace;
             font-size: 13px;
             color: var(--ink-faint);
             letter-spacing: 0.01em;
         }
+        .roleline a { color: var(--signal); text-decoration: none; border-bottom: 1px solid var(--signal-tint); }
 
-        .roleline a {
-            color: var(--signal);
-            text-decoration: none;
-            border-bottom: 1px solid var(--signal-tint);
-        }
-
-        .wave {
-            display: block;
-            width: 100%;
-            height: 28px;
-            margin: 26px 0 34px 0;
-        }
-
-        .wave path {
-            fill: none;
-            stroke: var(--signal);
-            stroke-width: 2;
-        }
-
+        .wave { display: block; width: 100%; height: 28px; margin: 26px 0 34px 0; }
+        .wave path { fill: none; stroke: var(--signal); stroke-width: 2; }
         @media (prefers-reduced-motion: no-preference) {
-            .wave path.animate {
-                transition: none;
-            }
+            .wave path.animate { transition: none; }
         }
 
         h2.section {
@@ -149,24 +102,12 @@
             color: var(--ink-faint);
             margin: 0 0 16px 0;
         }
+        
+        .block { margin-bottom: 44px; }
+        .block:last-child { margin-bottom: 0; }
 
-        .block {
-            margin-bottom: 44px;
-        }
-
-        .block:last-child {
-            margin-bottom: 0;
-        }
-
-        .about p {
-            margin: 0 0 14px 0;
-            color: var(--ink);
-        }
-
-        .about p:last-child {
-            margin-bottom: 0;
-        }
-
+        .about p { margin: 0 0 14px 0; color: var(--ink); }
+        .about p:last-child { margin-bottom: 0; }
         .about .thesis {
             background: var(--signal-tint);
             border-left: 2.5px solid var(--signal);
@@ -176,22 +117,10 @@
             font-weight: 500;
         }
 
-        .entry {
-            padding: 20px 0;
-            border-top: 1px solid var(--line);
-        }
-
-        .entry:first-child {
-            border-top: none;
-            padding-top: 0;
-        }
-
+        .entry { padding: 20px 0; border-top: 1px solid var(--line); }
+        .entry:first-child { border-top: none; padding-top: 0; }
         .entry-eyebrow {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 6px;
+            display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 6px;
             font-family: 'IBM Plex Mono', monospace;
             font-size: 12px;
             color: var(--signal);
@@ -199,11 +128,7 @@
             text-transform: uppercase;
             margin-bottom: 6px;
         }
-
-        .entry-date {
-            color: var(--ink-faint);
-        }
-
+        .entry-date { color: var(--ink-faint); }
         .entry-title {
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 600;
@@ -211,156 +136,92 @@
             margin: 0 0 2px 0;
             color: var(--ink);
         }
-
-        .entry-org {
-            color: var(--ink-soft);
-            font-size: 0.92rem;
-            margin-bottom: 10px;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 12px;
-        }
-
+        .entry-org { color: var(--ink-soft); font-size: 0.92rem; margin-bottom: 10px; }
+        
+        .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
         .tag {
             font-family: 'IBM Plex Mono', monospace;
             font-size: 11px;
-            color: var(--ink-soft);
-            background: var(--paper-raised);
-            border: 1px solid var(--line);
-            padding: 2px 8px;
-            border-radius: 20px;
+            background: white; border: 1px solid var(--line); border-radius: 3px;
+            padding: 1px 6px; color: var(--ink-soft);
         }
-
-        .entry-lead {
-            font-weight: 500;
-            margin: 0 0 12px 0;
-        }
-
-        .entry ul {
-            margin: 0 0 14px 0;
-            padding-left: 20px;
-        }
-
-        .entry li {
-            margin-bottom: 6px;
-            color: var(--ink);
-        }
-
-        .entry-outcome {
-            border-left: 2px solid var(--accent-warm);
-            padding-left: 14px;
-            color: var(--ink-soft);
-            font-size: 0.95rem;
+        
+        .entry-lead { font-weight: 500; font-size: 0.96rem; margin: 0 0 10px 0; color: var(--ink); }
+        .entry ul { margin: 0 0 12px 0; padding-left: 18px; color: var(--ink-soft); font-size: 0.92rem; }
+        .entry li { margin-bottom: 5px; padding-left: 4px; color: var(--ink); }
+        .entry li::marker { color: var(--signal); }
+        
+        .entry-outcome { 
+            margin: 0; font-size: 0.92rem; color: var(--ink); 
+            padding: 8px 12px; background: var(--paper-raised); border-radius: 3px; 
             font-style: italic;
         }
 
         .skills-grid {
-            display: grid;
-            grid-template-columns: 170px 1fr;
-            row-gap: 10px;
-            column-gap: 16px;
+            display: grid; grid-template-columns: 120px 1fr; gap: 10px 16px;
+            border-top: 1px solid var(--line); padding-top: 20px; font-size: 0.92rem;
         }
-
-        .skills-grid dt {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 12.5px;
-            color: var(--ink-faint);
-            padding-top: 2px;
-        }
-
-        .skills-grid dd {
-            margin: 0;
-            color: var(--ink);
-        }
+        .skills-grid dt { font-family: 'IBM Plex Mono', monospace; font-weight: 600; color: var(--ink); padding-top: 1px; }
+        .skills-grid dd { margin: 0; color: var(--ink-soft); }
 
         .edu-school {
-            font-weight: 600;
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.05rem;
+            font-weight: 600;
+            font-size: 1.1rem;
         }
-
         .edu-gpa {
             color: var(--signal);
             font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.92rem;
-            margin: 2px 0 10px 0;
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin-top: 2px;
         }
-
         .edu-detail {
+            font-size: 0.9rem;
             color: var(--ink-soft);
-            font-size: 0.94rem;
+            margin-top: 8px;
+            line-height: 1.6;
         }
+        .edu-detail strong { color: var(--ink); font-weight: 500; }
 
-        .two-col {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 32px;
+        .two-col { 
+            display: grid; grid-template-columns: 1fr 1fr; gap: 30px; 
+            border-top: 1px solid var(--line); padding-top: 20px; 
         }
-
-        ul.plain {
-            margin: 0;
-            padding-left: 18px;
+        
+        .list-block ul { list-style: none; padding: 0; margin: 0; }
+        .list-block li { 
+            font-size: 0.92rem; color: var(--ink-soft); margin-bottom: 6px; 
+            padding-left: 12px; position: relative; 
         }
-
-        ul.plain li {
-            margin-bottom: 7px;
-            color: var(--ink);
-            font-size: 0.95rem;
+        .list-block li::before {
+            content: "—"; position: absolute; left: 0; color: var(--line);
+            font-family: 'IBM Plex Mono', monospace; font-size: 10px; top: 1px;
         }
+        .list-block strong { color: var(--ink); font-weight: 500; }
 
         footer {
             margin-top: 60px;
-            padding-top: 20px;
+            padding-top: 24px;
             border-top: 1px solid var(--line);
             font-family: 'IBM Plex Mono', monospace;
-            font-size: 12px;
+            font-size: 11px;
             color: var(--ink-faint);
             text-align: center;
         }
+        footer a { color: var(--signal); text-decoration: none; }
 
-        footer a {
-            color: var(--signal);
-            text-decoration: none;
-        }
-
-        @media (max-width:600px) {
-            h1.name {
-                font-size: 2rem;
-            }
-
-            .two-col {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-                row-gap: 4px;
-            }
-
-            .skills-grid dt {
-                padding-top: 10px;
-            }
-
-            .entry-eyebrow {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 2px;
-            }
+        @media (max-width: 600px) {
+            h1.name { font-size: 2rem; }
+            .two-col { grid-template-columns: 1fr; gap: 20px; }
+            .skills-grid { grid-template-columns: 1fr; row-gap: 4px; }
+            .skills-grid dt { padding-top: 10px; }
+            .entry-eyebrow { flex-direction: column; align-items: flex-start; gap: 2px; }
         }
 
         @media print {
-            .langbar {
-                display: none;
-            }
-
-            body {
-                background: #fff;
-            }
+            .langbar { display: none; }
+            body { background: #fff; }
         }
     </style>
 </head>
@@ -374,163 +235,111 @@
         <header class="hero">
             <img class="avatar" src="profile-preview.png" alt="Hyeonseo Lee" onerror="this.style.display='none'">
             <h1 class="name">Hyeonseo Lee</h1>
-            <p class="tagline">Execution is what shapes me. I learn through trial and error, turning it into steady
-                momentum.</p>
-            <div class="roleline">Computer Engineering, Inha University (GPA 4.02 / 4.5) &nbsp;·&nbsp; Embedded ·
-                Systems · Data &nbsp;·&nbsp; <a href="mailto:hynsxo@gmail.com">hynsxo@gmail.com</a></div>
+            <p class="tagline">Execution is what shapes me. I learn through trial and error, turning it into steady momentum.</p>
+            <div class="roleline">Computer Engineering, Inha University (GPA 4.02 / 4.5) &nbsp;·&nbsp; Embedded · Systems · Data &nbsp;·&nbsp; <a href="mailto:hynsxo@gmail.com">hynsxo@gmail.com</a></div>
         </header>
 
         <svg class="wave" viewBox="0 0 800 32" preserveAspectRatio="none" aria-hidden="true">
-            <path id="wavepath"
-                d="M0,24 L40,24 L40,8 L80,8 L80,24 L110,24 L110,8 L170,8 L170,24 L190,24 L190,8 L240,8 L240,24 L275,24 L275,8 L345,8 L345,24 L370,24 L370,8 L425,8 L425,24 L470,24 L470,8 L535,8 L535,24 L565,24 L565,8 L615,8 L615,24 L655,24 L655,8 L715,8 L715,24 L735,24 L735,8 L800,8" />
+            <path id="wavepath" d="M0,24 L40,24 L40,8 L80,8 L80,24 L110,24 L110,8 L170,8 L170,24 L190,24 L190,8 L240,8 L240,24 L275,24 L275,8 L345,8 L345,24 L370,24 L370,8 L425,8 L425,24 L470,24 L470,8 L535,8 L535,24 L565,24 L565,8 L615,8 L615,24 L655,24 L655,8 L715,8 L715,24 L735,24 L735,8 L800,8" />
         </svg>
 
         <section class="block about">
             <h2 class="section">About</h2>
-            <p>While tracking down why a drum-playing robot's arm kept drifting slightly out of sync, I ended up
-                re-reading the communication protocol specification from page one. That same investigation led me to
-                take a physics course I needed along the way &mdash; and finish it with top marks.</p>
-            <p class="thesis">Looking back, every project I've worked on circles the same question: where is this data
-                coming from, where is it going, and how accurately is it getting there? Whether it was CAN communication
-                in a robot, noise data along a UAM flight path, an overseas-remittance pipeline at a bank, or V2V
-                communication between vehicles &mdash; only the domain changed. The way I checked the answer never did.
-            </p>
-            <p>When familiar coursework isn't enough to solve a problem, I go wherever the answer is &mdash; a physics
-                class, a protocol spec, whatever it takes. The projects below are a record of the choices I made along
-                the way, and what I learned from them.</p>
+            <p>While tracking down why a drum-playing robot's arm kept drifting slightly out of sync, I ended up re-reading the communication protocol specification from page one. That same investigation led me to take a physics course I needed along the way &mdash; and finish it with top marks.</p>
+            <p class="thesis">Looking back, every project I've worked on circles the same question: where is this data coming from, where is it going, and how accurately is it getting there? Whether it was CAN communication in a robot, noise data along a UAM flight path, an overseas-remittance pipeline at a bank, or V2V communication between vehicles &mdash; only the domain changed. The way I checked the answer never did.</p>
+            <p>When familiar coursework isn't enough to solve a problem, I go wherever the answer is &mdash; a physics class, a protocol spec, whatever it takes. The projects below are a record of the choices I made along the way, and what I learned from them.</p>
         </section>
 
         <section class="block">
             <h2 class="section">Projects &amp; Experience</h2>
 
+            <!-- 1. IBK 기업은행 (가장 강력한 비즈니스 임팩트 / 최우수 인턴) -->
             <div class="entry">
-                <div class="entry-eyebrow"><span>🤖 Robotics / Embedded</span><span class="entry-date">Dec 2024 &ndash;
-                        Feb 2025</span></div>
-                <div class="entry-title">Undergraduate Field Intern, AI Research Center</div>
-                <div class="entry-org">Korea Institute of Science and Technology (KIST) &mdash; 10-DOF Dual-Arm
-                    Drum-Playing Robot</div>
-                <div class="tags"><span class="tag">C/C++</span><span class="tag">CAN (CANopen)</span><span
-                        class="tag">GDB</span></div>
-                <p class="entry-lead">Tracing the robot arm's unnatural motion all the way down, I found the real
-                    problem wasn't the hardware &mdash; it was communication latency during control-mode switching.
-                    Redesigning that layer around a hybrid protocol cut the development timeline by roughly two months.
-                </p>
+                <div class="entry-eyebrow"><span>🏦 Financial Systems</span><span class="entry-date">Jul &ndash; Aug 2025</span></div>
+                <div class="entry-title">IT &amp; Finance Development Intern &mdash; Top Intern, 33rd Cohort</div>
+                <div class="entry-org">IBK Industrial Bank of Korea</div>
+                <div class="tags"><span class="tag">System Architecture</span><span class="tag">Service Design</span></div>
+                <p class="entry-lead">I identified a structural problem: entering the wrong recipient account on an overseas remittance wastes the wire fee and burns staff time on after-the-fact cleanup. I proposed a pre-validation service to fix it.</p>
                 <ul>
-                    <li>Confirmed that motor position-value synchronization lagged every time the system switched
-                        between position and torque control modes, and judged that the existing PDO-only scheme couldn't
-                        deliver the needed real-time performance.</li>
-                    <li>Proposed and implemented a hybrid PDO+SDO communication scheme to read real-time motor position
-                        values directly.</li>
-                    <li>Built a trajectory-generation algorithm (Dijkstra + interpolation) to minimize unnecessary torso
-                        movement, tuned motor PID parameters, and debugged system-level issues with GDB.</li>
-                    <li>Set up a GitHub-convention-based version-control workflow to support future contributors.</li>
+                    <li>Analyzed the data pipeline of a large-scale core banking system and mapped its architectural data flow.</li>
+                    <li>Designed a triple-verification process &mdash; data-driven, API, and rule-based &mdash; combining SWIFT pre-validation, internal remittance history, and rule-based filtering.</li>
+                    <li>Reviewed feasibility against the actual system architecture before writing the proposal, rather than stopping at the idea stage.</li>
                 </ul>
-                <p class="entry-outcome">Result: natural drum-strike motion, documented as a performance-state diagram
-                    for future contributors &mdash; and the project that taught me to go back to the fundamentals when
-                    the familiar approach doesn't work.</p>
+                <p class="entry-outcome">Result: Adopted as an official development initiative &mdash; rare for an intern's proposal &mdash; and led to selection as an Outstanding Intern, 33rd cohort.</p>
             </div>
 
+            <!-- 2. KIST 연구 인턴 (실무 연구 및 기술적 딥다이브) -->
             <div class="entry">
-                <div class="entry-eyebrow"><span>🚗 Autonomous Driving</span><span class="entry-date">Oct 2025 &ndash;
-                        Feb 2026</span></div>
+                <div class="entry-eyebrow"><span>🤖 Robotics / Embedded</span><span class="entry-date">Dec 2024 &ndash; Feb 2025</span></div>
+                <div class="entry-title">Undergraduate Field Intern, AI Research Center</div>
+                <div class="entry-org">Korea Institute of Science and Technology (KIST) &mdash; 10-DOF Dual-Arm Drum-Playing Robot</div>
+                <div class="tags"><span class="tag">C/C++</span><span class="tag">CAN (CANopen)</span><span class="tag">GDB</span></div>
+                <p class="entry-lead">Tracing the robot arm's unnatural motion all the way down, I found the real problem wasn't the hardware &mdash; it was communication latency during control-mode switching. Redesigning that layer around a hybrid protocol cut the development timeline by roughly two months.</p>
+                <ul>
+                    <li>Confirmed that motor position-value synchronization lagged every time the system switched between position and torque control modes, and judged that the existing PDO-only scheme couldn't deliver the needed real-time performance.</li>
+                    <li>Proposed and implemented a hybrid PDO+SDO communication scheme to read real-time motor position values directly.</li>
+                    <li>Built a trajectory-generation algorithm (Dijkstra + interpolation) to minimize unnecessary torso movement, tuned motor PID parameters, and debugged system-level issues with GDB.</li>
+                    <li>Set up a GitHub-convention-based version-control workflow to support future contributors.</li>
+                </ul>
+                <p class="entry-outcome">Result: Natural drum-strike motion, documented as a performance-state diagram for future contributors &mdash; and the project that taught me to go back to the fundamentals when the familiar approach doesn't work.</p>
+            </div>
+
+            <!-- 3. KAIST 자율주행 (대회 수상 및 첨단 기술) -->
+            <div class="entry">
+                <div class="entry-eyebrow"><span>🚗 Autonomous Driving</span><span class="entry-date">Oct 2025 &ndash; Feb 2026</span></div>
                 <div class="entry-title">KAIST Mobility Challenge &mdash; Finalist Award</div>
                 <div class="entry-org">Team Caspi &mdash; V2V/V2I Cooperative Autonomous Driving, LiDAR</div>
-                <div class="tags"><span class="tag">LiDAR</span><span class="tag">V2V / V2I</span><span class="tag">Path
-                        Planning</span></div>
-                <p class="entry-lead">Instead of having each vehicle decide independently, our team built a cooperative
-                    structure where vehicles coordinate in advance over inter-vehicle communication. My part was the
-                    priority algorithm deciding which vehicle goes first at a four-way intersection.</p>
+                <div class="tags"><span class="tag">LiDAR</span><span class="tag">V2V / V2I</span><span class="tag">Path Planning</span></div>
+                <p class="entry-lead">Instead of having each vehicle decide independently, our team built a cooperative structure where vehicles coordinate in advance over inter-vehicle communication. My part was the priority algorithm deciding which vehicle goes first at a four-way intersection.</p>
                 <ul>
-                    <li>Contributed to a LiDAR-based cooperative autonomous-driving system for small-scale vehicles.
-                    </li>
-                    <li>Designed the right-of-way algorithm, determining passage order at intersections from real-time
-                        inter-vehicle position and speed data.</li>
-                    <li>Verified the logic against simultaneous multi-vehicle entry scenarios to ensure collision-free
-                        crossings.</li>
+                    <li>Contributed to a LiDAR-based cooperative autonomous-driving system for small-scale vehicles.</li>
+                    <li>Designed the right-of-way algorithm, determining passage order at intersections from real-time inter-vehicle position and speed data.</li>
+                    <li>Verified the logic against simultaneous multi-vehicle entry scenarios to ensure collision-free crossings.</li>
                 </ul>
                 <p class="entry-outcome">Result: Finalist Award from the KAIST Mobility Research Center.</p>
             </div>
 
+            <!-- 4. 국토교통 데이터 (대규모 데이터 처리 및 대상 수상) -->
             <div class="entry">
-                <div class="entry-eyebrow"><span>🏦 Financial Systems</span><span class="entry-date">Jul &ndash; Aug
-                        2025</span></div>
-                <div class="entry-title">IT &amp; Finance Development Intern &mdash; Top Intern, 33rd Cohort</div>
-                <div class="entry-org">IBK Industrial Bank of Korea</div>
-                <div class="tags"><span class="tag">System Architecture</span><span class="tag">Service Design</span>
-                </div>
-                <p class="entry-lead">I identified a structural problem: entering the wrong recipient account on an
-                    overseas remittance wastes the wire fee and burns staff time on after-the-fact cleanup. I proposed a
-                    pre-validation service to fix it.</p>
-                <ul>
-                    <li>Analyzed the data pipeline of a large-scale core banking system and mapped its architectural
-                        data flow.</li>
-                    <li>Designed a triple-verification process &mdash; data-driven, API, and rule-based &mdash;
-                        combining SWIFT pre-validation, internal remittance history, and rule-based filtering.</li>
-                    <li>Reviewed feasibility against the actual system architecture before writing the proposal, rather
-                        than stopping at the idea stage.</li>
-                </ul>
-                <p class="entry-outcome">Result: adopted as an official development initiative &mdash; rare for an
-                    intern's proposal &mdash; and led to selection as an Outstanding Intern, 33rd cohort.</p>
-            </div>
-
-            <div class="entry">
-                <div class="entry-eyebrow"><span>📊 Computer Vision / Data</span><span class="entry-date">Apr &ndash;
-                        Aug 2024</span></div>
+                <div class="entry-eyebrow"><span>📊 Computer Vision / Data</span><span class="entry-date">Apr &ndash; Aug 2024</span></div>
                 <div class="entry-title">National Land &amp; Transportation Data Competition</div>
                 <div class="entry-org">Korea Airports Corporation President's Award (Excellence Award)</div>
                 <div class="tags"><span class="tag">Python</span><span class="tag">OpenCV</span></div>
-                <p class="entry-lead">I judged that for Urban Air Mobility (UAM) to become commercially viable, a noise
-                    level residents can actually accept would matter as much as raw performance &mdash; so I proposed a
-                    data-driven, noise-reducing flight-path model.</p>
+                <p class="entry-lead">I judged that for Urban Air Mobility (UAM) to become commercially viable, a noise level residents can actually accept would matter as much as raw performance &mdash; so I proposed a data-driven, noise-reducing flight-path model.</p>
                 <ul>
-                    <li>Analyzed 10M+ transportation records to quantify population density, time-of-day patterns, and
-                        noise sensitivity by region.</li>
-                    <li>Processed map imagery with OpenCV to calculate region-specific noise-sensitivity weights and fed
-                        them into the route-design algorithm.</li>
-                    <li>Finalized a routing logic that avoids noise-sensitive areas without significantly hurting flight
-                        efficiency.</li>
+                    <li>Analyzed 10M+ transportation records to quantify population density, time-of-day patterns, and noise sensitivity by region.</li>
+                    <li>Processed map imagery with OpenCV to calculate region-specific noise-sensitivity weights and fed them into the route-design algorithm.</li>
+                    <li>Finalized a routing logic that avoids noise-sensitive areas without significantly hurting flight efficiency.</li>
                 </ul>
-                <p class="entry-outcome">Result: proposed as a standard model for UAM routing; awarded the Korea
-                    Airports Corporation President's Award.</p>
+                <p class="entry-outcome">Result: Proposed as a standard model for UAM routing; awarded the Korea Airports Corporation President's Award.</p>
             </div>
 
+            <!-- 5. 인하대 학부 연구생 (학술적 기초 설계) -->
             <div class="entry">
-                <div class="entry-eyebrow"><span>🔬 Computer Vision</span><span class="entry-date">Spring 2024</span>
-                </div>
+                <div class="entry-eyebrow"><span>🔬 Computer Vision</span><span class="entry-date">Spring 2024</span></div>
                 <div class="entry-title">Undergraduate Researcher, CVIP Computer Vision Lab</div>
                 <div class="entry-org">Inha University</div>
                 <div class="tags"><span class="tag">OpenCV</span><span class="tag">YOLOv5</span></div>
-                <p class="entry-lead">Noticing that conventional cooling systems hold the same temperature whether
-                    anyone's in the room or not &mdash; wasting power in the process &mdash; I designed a real-time,
-                    occupancy-based automatic temperature control system.</p>
+                <p class="entry-lead">Noticing that conventional cooling systems hold the same temperature whether anyone's in the room or not &mdash; wasting power in the process &mdash; I designed a real-time, occupancy-based automatic temperature control system.</p>
                 <ul>
-                    <li>Self-studied signal processing and image classification/detection theory using Stanford's CS231n
-                        curriculum.</li>
-                    <li>Built a real-time person-counting model on YOLOv5 and integrated it with an air-conditioner API
-                        so temperature adjusts automatically with headcount.</li>
+                    <li>Self-studied signal processing and image classification/detection theory using Stanford's CS231n curriculum.</li>
+                    <li>Built a real-time person-counting model on YOLOv5 and integrated it with an air-conditioner API so temperature adjusts automatically with headcount.</li>
                 </ul>
-                <p class="entry-outcome">Result: my first time turning course theory (CS231n) into a working, tangible
-                    system.</p>
+                <p class="entry-outcome">Result: My first time turning course theory (CS231n) into a working, tangible system.</p>
             </div>
 
+            <!-- 6. 교내 활동 (소프트 스킬) -->
             <div class="entry">
-                <div class="entry-eyebrow"><span>🌏 Community</span><span class="entry-date">Mar 2024 &ndash; Jun
-                        2026</span></div>
+                <div class="entry-eyebrow"><span>🌏 Community</span><span class="entry-date">Mar 2024 &ndash; Jun 2026</span></div>
                 <div class="entry-title">SGCS Work-Study Student, International Studies</div>
-                <div class="entry-org">Inha University &mdash; International Student Support &amp; Event Planning (3
-                    years)</div>
-                <p class="entry-lead">For international students who aren't yet comfortable in Korean, one small
-                    administrative slip-up can spiral into a visa problem. My rule, every time, was to start by asking:
-                    from this student's perspective, what's most urgent right now?</p>
+                <div class="entry-org">Inha University &mdash; International Student Support &amp; Event Planning</div>
+                <p class="entry-lead">For international students who aren't yet comfortable in Korean, one small administrative slip-up can spiral into a visa problem. My rule, every time, was to start by asking: from this student's perspective, what's most urgent right now?</p>
                 <ul>
-                    <li>Advised and guided international students in English on visa extensions, housing, and daily-life
-                        administration for three years.</li>
-                    <li>Built trust by always meeting the deadlines I committed to, earning a review describing me as
-                        "someone who'd be welcomed anywhere."</li>
+                    <li>Advised and guided international students in English on visa extensions, housing, and daily-life administration for three years.</li>
+                    <li>Built trust by always meeting the deadlines I committed to, earning a review describing me as "someone who'd be welcomed anywhere."</li>
                     <li>Collaborated with students and staff across a wide range of nationalities and backgrounds.</li>
                 </ul>
-                <p class="entry-outcome">Result: a habit that carried straight into my IBK internship &mdash; asking
-                    first what the problem looks like from the user's side.</p>
+                <p class="entry-outcome">Result: A habit that carried straight into my IBK internship &mdash; asking first what the problem looks like from the user's side.</p>
             </div>
 
         </section>
@@ -541,8 +350,7 @@
                 <dt>Languages</dt>
                 <dd>C/C++, Python, Java</dd>
                 <dt>Domains</dt>
-                <dd>Embedded systems, CAN(CANopen) communication, computer vision, data analysis, financial systems
-                    analysis</dd>
+                <dd>Embedded systems, CAN (CANopen) communication, computer vision, data analysis, financial systems analysis</dd>
                 <dt>Frameworks</dt>
                 <dd>OpenCV, ROS2, CUDA, OpenMP, FastAPI</dd>
                 <dt>Tools</dt>
@@ -556,40 +364,37 @@
             <h2 class="section">Education</h2>
             <div class="edu-school">Inha University &mdash; B.S. Computer Engineering</div>
             <div class="edu-gpa">GPA 4.02 / 4.5</div>
-            <div class="edu-detail">Completed with top grades: Operating Systems (A+), Computer Networks (A+), Computer
-                Architecture (A+), Systems Programming (A+), Artificial Intelligence (A+), Modern Physics (A+),
-                Computational Linear Algebra (A+), Java-Based Application Programming (A+), Linux Programming (A),
-                Mathematical Physics (A)</div>
+            <div class="edu-detail">Completed with top grades: <strong>Operating Systems</strong> (A+), <strong>Computer Networks</strong> (A+), <strong>Computer Architecture</strong> (A+), <strong>Systems Programming</strong> (A+), <strong>Artificial Intelligence</strong> (A+), <strong>Modern Physics</strong> (A+), <strong>Computational Linear Algebra</strong> (A+), <strong>Java-Based Application Programming</strong> (A+), <strong>Linux Programming</strong> (A), <strong>Mathematical Physics</strong> (A)</div>
         </section>
 
         <section class="block two-col">
-            <div>
+            <div class="list-block">
                 <h2 class="section">Certifications</h2>
-                <ul class="plain">
-                    <li>Engineer Information Processing &mdash; results expected Sep 2026</li>
-                    <li>TOPCIT Practitioner, Level 3 (501/1000)</li>
-                    <li>Korean History Proficiency Test, Level 1</li>
-                    <li>Driver's License &mdash; Class 1 (Regular &amp; Large), Class 2 (Small)</li>
+                <ul>
+                    <li><strong>Engineer Information Processing</strong> &mdash; Results expected Sep 2026</li>
+                    <li><strong>TOPCIT Practitioner</strong>, Level 3 (501/1000)</li>
+                    <li><strong>Korean History Proficiency Test</strong>, Level 1</li>
+                    <li><strong>Driver's License</strong> &mdash; Class 1 (Regular &amp; Large), Class 2 (Small)</li>
                 </ul>
             </div>
-            <div>
+            <div class="list-block">
                 <h2 class="section">Awards &amp; Scholarships</h2>
-                <ul class="plain">
-                    <li>Korea Airports Corp. President's Award (2024)</li>
-                    <li>KAIST Mobility Challenge, Finalist Award (2026)</li>
-                    <li>Haeseong Cultural Foundation Full Scholarship (2024)</li>
-                    <li>Inha CE Dept. Academic Excellence Scholarship (2025)</li>
-                    <li>Ulsan Research Institute Scholarship (2025&ndash;2026)</li>
-                    <li>Inha College of SW Convergence Excellence Award (2026)</li>
+                <ul>
+                    <li><strong>Korea Airports Corp. President's Award</strong> (2024)</li>
+                    <li><strong>KAIST Mobility Challenge</strong>, Finalist Award (2026)</li>
+                    <li><strong>Haeseong Cultural Foundation Full Scholarship</strong> (2024)</li>
+                    <li><strong>Inha CE Dept. Academic Excellence Scholarship</strong> (2025)</li>
+                    <li><strong>Ulsan Research Institute Scholarship</strong> (2025&ndash;2026)</li>
+                    <li><strong>Inha College of SW Convergence Excellence Award</strong> (2026)</li>
                 </ul>
             </div>
         </section>
 
-        <section class="block">
+        <section class="block list-block">
             <h2 class="section">Activities</h2>
-            <ul class="plain">
-                <li>Republic of Korea Army &mdash; honorably discharged as Sergeant (Jan 2022 &ndash; Jul 2023)</li>
-                <li>SGCS Work-Study Student, Inha University International Studies (Mar 2024 &ndash; Jun 2026)</li>
+            <ul>
+                <li><strong>Republic of Korea Army</strong> &mdash; Honorably discharged as Sergeant (Jan 2022 &ndash; Jul 2023)</li>
+                <li><strong>SGCS Work-Study Student</strong>, Inha University International Studies (Mar 2024 &ndash; Jun 2026)</li>
             </ul>
         </section>
 
@@ -615,5 +420,4 @@
     </script>
 
 </body>
-
 </html>
