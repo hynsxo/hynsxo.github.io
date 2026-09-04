@@ -286,28 +286,32 @@
     <div class="entry">
       <div class="entry-eyebrow"><span>📊 데이터 분석</span><span class="entry-date">2024.04 &ndash; 2024.08</span></div>
       <div class="entry-title">국토·교통 데이터 활용 경진대회</div>
-      <div class="entry-org">한국공항공사 사장상 (우수상)</div>
-      <div class="tags"><span class="tag">Python</span><span class="tag">OpenCV</span></div>
-      <p class="entry-lead">UAM(도심항공교통)이 상용화되려면 기술보다 먼저 넘어야 할 것이 주민 수용성이라고 봤습니다. 아무리 효율적인 항로여도 <strong>사람이 사는 곳 위를 지나가면 결국 반대에 부딪히기</strong> 때문입니다.</p>
+      <div class="entry-org">팀 UAIN — 한국공항공사 사장상 (우수상)</div>
+      <div class="tags"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">QGIS</span><span class="tag">회귀분석</span></div>
+      <p class="entry-lead">UAM은 2035년 이후 200개가 넘는 노선이 운항될 것으로 예측되지만, 당시에는 고정형 회랑 실증 외에 명확한 항로설계지침이 없었습니다. 항공소음은 피해 범위가 넓어 노선이 늘수록 주거지 소음 피해도 함께 늘어납니다. 저희는 <strong>항로를 설계하는 단계에서 미리 소음 영향을 계산할 수 있는 통합 소음 분석모델</strong>을 제안했습니다.</p>
       <ul>
-        <li>천만 건 규모의 교통 데이터를 분석해 지역별 인구 밀도, 시간대, 소음 민감도를 수치화</li>
-        <li>OpenCV로 지도 이미지를 처리해 지역별 소음 민감도 가중치를 산출, 항로 설계 알고리즘에 반영</li>
-        <li>소음 민감 지역을 우회하면서도 비행 효율을 크게 해치지 않는 항로 설계 로직을 완성해 UAM 항로 모델의 표준안으로 제시</li>
+        <li>광역교통 수요 데이터로 UAM 수요가 집중될 서울 도심 3개 지점(강남·홍대입구·서울역)을 선정 — 잠실은 롯데월드타워로 항로 설계 변수가 많아 제외</li>
+        <li>국토교통부 용도별 건물정보를 QGIS로 처리해 지점별 주거·상업지구 비율을 지도화하고, 소음·진동관리법의 주거지·상업지 소음 기준 비율을 근거로 지구별 소음 민감도 가중치를 산정</li>
+        <li>김포공항 실측 항공소음 데이터 기반 다항 회귀모델과 UAM 소음 인증기준 기반 Log-scale 회귀모델을 통합해 거리별 소음 예측모델 구현</li>
+        <li>이착륙장을 중심으로 남북·동서·남서-북동·남동-북서 4개 방향 항로를 설정하고, 항로 좌우 8칸(1칸 50m, 총 19칸) 격자에 예측 소음값과 지구 가중치를 대입해 격자 단위 소음 영향을 분석</li>
       </ul>
-      <p class="entry-outcome">최단 경로 대신 "누가 소음 피해를 보는가"를 변수로 넣은 것이 이 모델의 차이였고, 이 접근으로 한국공항공사 사장상을 수상했습니다.</p>
+      <p class="entry-outcome">같은 지점이라도 항로 방향에 따라 소음 영향이 달라진다는 것을 수치로 보일 수 있었습니다. 서울역의 경우 평균 이상 소음 가중치 영역 비율이 동서 항로 39.7%, 남서-북동 항로 31.8%로 갈렸습니다. 이 모델을 UAM 항로설계지침, 운항사의 항로 설계, 이착륙장 소음대책지역 선정에 쓸 수 있는 기준으로 제안해 한국공항공사 사장상을 수상했습니다.</p>
     </div>
 
     <div class="entry">
       <div class="entry-eyebrow"><span>🔬 컴퓨터 비전</span><span class="entry-date">2024-1학기</span></div>
       <div class="entry-title">CVIP 컴퓨터비전 연구실 학부연구생</div>
       <div class="entry-org">실시간 인원 인식 기반 자동 온도 제어 시스템</div>
-      <div class="tags"><span class="tag">OpenCV</span><span class="tag">YOLOv5</span></div>
-      <p class="entry-lead">강의실은 사람이 두 명이든 서른 명이든 같은 온도로 냉방됩니다. 그만큼 전력이 낭비된다는 점에 착안해, <strong>인원 수에 따라 온도가 자동으로 조절되는 시스템</strong>을 만들었습니다.</p>
+      <div class="tags"><span class="tag">PyTorch</span><span class="tag">YOLOv5</span><span class="tag">OpenCV</span></div>
+      <p class="entry-lead">이미지나 영상에서 실시간으로 객체를 식별하는 모델을 <strong>실생활에 쓰이는 무언가로 연결해보고 싶었습니다.</strong> 강의실은 사람이 두 명이든 서른 명이든 같은 온도로 냉방된다는 점에 착안해, 인원 수에 따라 온도가 자동으로 조절되는 시스템을 만들었습니다.</p>
       <ul>
-        <li>스탠퍼드 CS231n 커리큘럼으로 신호처리와 이미지 분류·검출 이론을 독학</li>
-        <li>YOLOv5 기반 실시간 사람 수 인식 모델을 구현하고, 에어컨 API와 연동해 인원 수에 따라 온도가 자동으로 바뀌는 구조를 완성</li>
+        <li>스탠퍼드 CS231n으로 신호처리와 이미지 분류·검출 이론을 학습, 그중 1-stage 검출 모델인 YOLO에 관심을 두고 파고듦</li>
+        <li>Roboflow 공개 데이터셋으로 사람 객체 인식 학습 데이터를 구성하고, PyTorch에서 YOLOv5 모델을 학습</li>
+        <li>학습된 모델과 OpenCV로 실시간 영상 스트림을 읽어 화면 안의 사람 수를 세는 코드를 작성</li>
+        <li>사람 수에 비례해 온도를 낮추는 함수(온도 = 기본온도 − k × 사람 수)를 정의하고, 에어컨 API로 전달하는 구조를 구현</li>
+        <li>이후 여러 스케일로 작은 물체까지 탐지하는 FPN과 그 핵심인 Focal Loss까지 살펴보며 1-stage 검출 모델 전반으로 이해를 넓힘</li>
       </ul>
-      <p class="entry-outcome">독학한 이론을 처음으로 손에 잡히는 시스템으로 옮겨본 경험이었습니다. 논문에서 읽은 검출 정확도와 실제 강의실 조명 아래에서의 정확도가 꽤 다르다는 것도 이때 알았습니다.</p>
+      <p class="entry-outcome">이론으로 배운 1-stage 검출 모델을 직접 학습시켜 돌려보고, 그 출력을 에어컨 제어라는 실제 기능까지 연결해본 학기였습니다. 모델을 만드는 것보다 그 모델이 내놓은 값을 무엇에 쓸지 정하는 데서 더 오래 고민했습니다.</p>
     </div>
 
     <div class="entry">
@@ -333,9 +337,9 @@
       <dt>Domain</dt>
       <dd>임베디드 시스템, CAN(CANopen) 통신, 컴퓨터비전, RAG·LLM 애플리케이션, 데이터 분석, 금융 시스템 분석</dd>
       <dt>Frameworks</dt>
-      <dd>OpenCV, ROS2, CUDA, OpenMP, FastAPI, FAISS, Sentence Transformers</dd>
+      <dd>OpenCV, PyTorch, ROS2, CUDA, OpenMP, FastAPI, FAISS, Sentence Transformers</dd>
       <dt>Tools</dt>
-      <dd>Linux (Ubuntu), AWS EC2, GDB, CMake, Git/GitHub</dd>
+      <dd>Linux (Ubuntu), AWS EC2, GDB, CMake, QGIS, Git/GitHub</dd>
       <dt>Science Base</dt>
       <dd>컴퓨터기반선형대수, 현대물리학, 수리물리학 수강</dd>
     </dl>
