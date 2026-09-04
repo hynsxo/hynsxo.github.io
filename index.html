@@ -6,7 +6,7 @@
 <title>이현서 — 포트폴리오</title>
 <meta name="description" content="GPA 4.02 | 임베디드 · 시스템 · 데이터 분석 엔지니어 이현서의 포트폴리오입니다.">
 <meta property="og:title" content="이현서 | 개발자 포트폴리오">
-<meta property="og:description" content="실행이 곧 나를 만든다. 시행착오 속에서 배우며 성장 흐름을 만드는 시스템 엔지니어입니다.">
+<meta property="og:description" content="한 박자 늦게 도착한 값 하나가 전체를 어긋나게 합니다. 그 한 박자를 찾는 일을 해왔습니다.">
 <meta property="og:url" content="https://hynsxo.github.io/">
 <meta property="og:image" content="https://hynsxo.github.io/profile-preview.png">
 
@@ -203,7 +203,7 @@
   <header class="hero">
     <img class="avatar" src="profile-preview.png" alt="이현서" onerror="this.style.display='none'">
     <h1 class="name">이현서</h1>
-    <p class="tagline">실행이 곧 나를 만든다.<br>시행착오 속에서 배우며 성장 흐름을 만듭니다.</p>
+    <p class="tagline">한 박자 늦게 도착한 값 하나가 전체를 어긋나게 합니다.<br>그 한 박자를 찾는 일을 해왔습니다.</p>
     <div class="roleline">인하대학교 컴퓨터공학과 (GPA 4.02 / 4.5) &nbsp;·&nbsp; 임베디드 · 시스템 · 데이터 분석 &nbsp;·&nbsp; <a href="mailto:hynsxo@gmail.com">hynsxo@gmail.com</a></div>
   </header>
 
@@ -213,29 +213,45 @@
 
   <section class="block about">
     <h2 class="section">About</h2>
-    <p>드럼 연주 로봇의 팔이 미세하게 어긋나는 이유를 추적하다, 결국 통신 프로토콜 문서를 처음부터 다시 읽어야 했습니다. 그 과정에서 필요했던 물리학과 전공 수업까지 들었고, 우수한 성적으로 마쳤습니다.</p>
+    <p>제가 해온 일은 대부분 데이터가 제때, 정확한 값으로 도착하게 만드는 일이었습니다. 로봇 관절이 한 주기 늦게 위치값을 받으면 드럼 소리가 뭉개지고, 해외송금 계좌번호가 한 자리 틀리면 고객이 수수료를 뭅니다. 교차로에서 차량 두 대가 서로의 위치를 늦게 알면 사고가 납니다.</p>
     <div class="thesis">
-      돌아보면 제가 겪은 프로젝트들은 결국 같은 질문으로 이어져 있었습니다. "이 데이터는 지금 어디서 와서, 어디로, 얼마나 정확하게 흘러가고 있는가." 로봇의 CAN 통신이든, UAM 항로의 소음 데이터든, 은행의 해외송금 파이프라인이든, 차량 간 V2V 통신이든 — 분야만 다를 뿐 확인하는 방식은 늘 같았습니다.
+      분야는 매번 달랐지만 확인해야 할 것은 늘 같았습니다. "이 데이터는 지금 어디서 와서, 어디로, 얼마나 정확하게 흘러가고 있는가." 로봇의 CAN 통신이든, UAM 항로의 소음 데이터든, 은행의 해외송금 파이프라인이든, 차량 간 V2V 통신이든 마찬가지였습니다.
     </div>
-    <p style="margin-top:14px;">익숙한 전공 지식만으로 안 풀리면 물리학 수업이든 프로토콜 스펙 문서든 가리지 않고 파고듭니다. 아래 프로젝트들은 그 과정에서 제가 어떤 선택을 했고, 무엇을 배웠는지에 대한 기록입니다.</p>
+    <p style="margin-top:14px;">익숙한 전공 지식으로 풀리지 않을 때는 통신 프로토콜 문서 첫 장으로 돌아가거나, 필요하면 전공 밖 수업까지 찾아 들었습니다. 아래 기록은 그때마다 제가 무엇을 선택했고, 그 선택이 누구에게 어떤 차이를 만들었는지에 대한 것입니다.</p>
   </section>
 
   <section class="block">
-    <h2 class="section">Experience & Projects</h2>
+    <h2 class="section">Experience &amp; Projects</h2>
 
     <div class="entry">
       <div class="entry-eyebrow"><span>🤖 로보틱스 / 임베디드</span><span class="entry-date">2024.12 &ndash; 2025.02</span></div>
       <div class="entry-title">한국과학기술연구원(KIST) 인공지능연구단 학부 현장실습</div>
       <div class="entry-org">10자유도 양팔 드럼 연주 로봇</div>
       <div class="tags"><span class="tag">C/C++</span><span class="tag">CAN(CANopen) 통신</span><span class="tag">GDB</span></div>
-      <p class="entry-lead">로봇 팔의 움직임이 부자연스러운 원인을 끝까지 추적한 결과, 진짜 문제는 하드웨어가 아니라 <strong>제어 모드 전환 시의 통신 지연</strong>이었습니다. 이 구조를 SDO 통신 기반으로 재설계해 개발 기간을 약 2개월 단축시켰습니다.</p>
+      <p class="entry-lead">10자유도 양팔 로봇이 드럼을 연주하는 과제였습니다. 그런데 타격 순간마다 팔이 미세하게 어긋나 소리가 뭉개졌습니다. 팀에서는 모터 제어 주기를 조정하는 방식으로 접근했지만 나아지지 않았고, 저는 통신 데이터를 직접 추적한 끝에 <strong>제어 모드가 전환되는 순간 모터 위치값이 기존 5ms 주기보다 늦게 도착한다는 것</strong>을 발견했습니다.</p>
       <ul>
         <li>포지션↔토크 제어 모드 전환 시마다 모터 위치값 동기화가 늦어지는 것을 확인, 기존 PDO 방식만으로는 실시간성이 부족하다고 판단</li>
         <li>SDO 통신으로 모터 실시간 위치값을 직접 수집하는 하이브리드 통신 구조를 제안·구현</li>
         <li>로봇 허리 움직임을 최소화하는 궤적 생성 알고리즘(다익스트라 + 보간법) 개발, 모터 PID 튜닝, GDB로 시스템 취약점 디버깅</li>
         <li>GitHub 컨벤션 기반 버전 관리 체계를 구축해 협업 환경 조성</li>
       </ul>
-      <p class="entry-outcome">자연스러운 드럼 타격 동작을 구현했고, 전체 코드 흐름을 연주 상태 기반 다이어그램으로 정리해 이후 합류하는 사람도 바로 이해할 수 있도록 남겼습니다. 통신 프로토콜 문서를 처음부터 다시 읽어야 했던 것도 이 프로젝트였습니다 — 익숙한 방식이 안 통하면 기초로 돌아간다는 걸 배운 경험입니다.</p>
+      <p class="entry-outcome">타격 동작이 자연스러워졌고 전체 개발 기간도 약 2개월 줄었습니다. 다만 더 오래 남은 건, 익숙한 방식이 안 통할 때 모터 프로토콜 문서 첫 장으로 돌아가는 게 결국 가장 빠른 길이었다는 사실입니다. 이후 합류할 사람이 헤매지 않도록 전체 코드 흐름을 연주 상태 기반 다이어그램으로 정리해 남겼습니다.</p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-eyebrow"><span>🧠 AI / 백엔드</span><span class="entry-date">2026.03 &ndash; 2026.06</span></div>
+      <div class="entry-title">FollowMe — 성향 기반 개인화 예측 서비스</div>
+      <div class="entry-org">졸업 캡스톤 팀 프로젝트 · 서버 &amp; RAG 설계 담당</div>
+      <div class="tags"><span class="tag">FastAPI</span><span class="tag">AWS EC2</span><span class="tag">FAISS</span><span class="tag">Sentence Transformer</span><span class="tag">GPT API</span></div>
+      <p class="entry-lead">저는 일기를 8년째 매일 쓰고 있습니다. 그런데 정작 내일 계획은 그날 무슨 일이 있을지 고려하지 않고 세우다 보니 지키지 못한 적이 많았습니다. <strong>제가 겪은 이 불편에서 출발한 프로젝트</strong>로, 저는 서버와 RAG 구조 설계, 내일 예측·미션 제안 로직을 맡았습니다.</p>
+      <ul>
+        <li>앱은 입력 저장과 화면 표시만 담당하고 AWS EC2의 FastAPI 서버가 임베딩·벡터 검색·GPT 호출을 전담하도록 역할 분리, 앱과 서버를 독립적으로 확장·관리 가능하게 설계</li>
+        <li>정형 데이터인 성향 점수 대신 일기 텍스트를 검색 대상으로 선택 — 개인의 반복 패턴은 숫자보다 감정과 상황이 담긴 문장에 드러났기 때문</li>
+        <li>사용자가 밤에 일기를 작성하면 자정에 예측 실행, 방금 쓴 일기를 쿼리로 FAISS에서 L2 거리가 가까운 과거 일기를 검색해 GPT 프롬프트의 근거로 주입</li>
+        <li>임베딩 모델은 한국어 처리·GPU 없는 EC2 구동·문장 유사도 검색이라는 세 조건을 따져 paraphrase-multilingual-MiniLM-L12-v2(384차원 경량 모델) 선정 후 직접 배포</li>
+        <li>전화번호·주민등록번호 등 민감정보는 정규식으로 마스킹 후 저장, 미션 완료 시 성향 점수가 갱신되어 다음 예측에 반영되는 자기 보정 루프 구현</li>
+      </ul>
+      <p class="entry-outcome">같은 수업 수강생 30명이 한 달간 실제로 사용했습니다. 기록이 쌓일수록 사용자마다 검색되는 과거 사례와 예측 근거가 달라지는 걸 지켜보면서, 제가 설계한 구조가 누군가의 하루에 실제로 닿는다는 걸 처음 체감했습니다.</p>
     </div>
 
     <div class="entry">
@@ -243,13 +259,14 @@
       <div class="entry-title">IBK기업은행 IT금융개발부 청년인턴</div>
       <div class="entry-org">33기 우수 인턴 선정</div>
       <div class="tags"><span class="tag">금융 시스템 아키텍처 분석</span><span class="tag">서비스 설계</span></div>
-      <p class="entry-lead">해외송금 시 수취계좌를 잘못 입력하면 전신료가 낭비되고 사후 처리에 인력이 소모된다는 구조적 문제를 발견하고, <strong>사전 검증 서비스</strong>를 제안했습니다 — 실제 개발 안건으로 채택되었습니다.</p>
+      <p class="entry-lead">해외로 송금할 때 수취계좌를 한 자리라도 잘못 입력하면 고객은 취소 수수료를 물고, 은행은 사후 처리에 인력을 씁니다. 저는 이 일을 실제로 처리해 온 <strong>행원분들을 직접 찾아가 어떤 상황에서 오류가 반복되는지 여쭙는 것부터</strong> 시작했습니다.</p>
       <ul>
         <li>대규모 은행 계정계 시스템의 데이터 파이프라인을 분석해 아키텍처 데이터흐름을 도식화</li>
+        <li>현장에서 모은 피드백에 더해 과거 오류 사례를 유형별로 분석, 특정 국가·은행 코드 조합에서 오류가 반복되는 패턴을 확인</li>
         <li>SWIFT Pre-validation, 내부 송금 이력 데이터, 룰 기반 필터링을 결합한 3중 검증 프로세스(Data-driven · API · Rule-based) 설계</li>
         <li>아이디어 제안에 그치지 않고 실제 시스템 구조에 맞는 구현 가능성까지 검토해 제안서 작성</li>
       </ul>
-      <p class="entry-outcome">인턴이 낸 제안이 실제 개발 안건으로 이어지는 경우는 흔치 않습니다. 이 제안은 IBK기업은행 33기 우수 인턴 선정으로 이어졌습니다.</p>
+      <p class="entry-outcome">제안이 실제 개발 안건으로 채택되어 33기 우수 인턴으로 선정되었습니다. 다만 기억에 더 남는 건, 자료만 봤다면 끝까지 몰랐을 오류 패턴을 결국 행원분들의 이야기에서 찾았다는 점입니다.</p>
     </div>
 
     <div class="entry">
@@ -257,13 +274,13 @@
       <div class="entry-title">KAIST 모빌리티 챌린지 본선진출상</div>
       <div class="entry-org">팀 카스피 — V2V·V2I 협력 자율주행, LiDAR</div>
       <div class="tags"><span class="tag">V2V·V2I</span><span class="tag">LiDAR</span></div>
-      <p class="entry-lead">여러 대의 차량이 각자 알아서 판단하는 대신, 차량 간 통신으로 미리 조율하는 협력 주행 구조를 구현했습니다. 그중 제가 맡은 부분은 <strong>사거리 교차로에서 어떤 차량이 먼저 지나갈지를 결정하는 우선순위 판단 알고리즘</strong>이었습니다.</p>
+      <p class="entry-lead">차량이 각자 알아서 판단하면 교차로에서는 결국 서로 눈치를 보게 됩니다. 여러 대가 통신으로 미리 순서를 정하면 그럴 필요가 없습니다. 저는 그중 <strong>사거리에서 어떤 차량이 먼저 지나갈지를 결정하는 우선순위 판단 알고리즘</strong>을 맡았습니다.</p>
       <ul>
         <li>라이다 센서를 활용한 소형 차량의 협력 자율주행 기술 구현에 참여</li>
         <li>사거리 교차로 상황에서 차량 간 위치·속도 데이터를 기준으로 통행 우선순위를 결정하는 알고리즘을 직접 설계</li>
         <li>다수 차량이 동시에 진입하는 상황에서도 충돌 없이 교차로를 통과하도록 로직 검증</li>
       </ul>
-      <p class="entry-outcome">KAIST 모빌리티 연구소장 본선진출상을 수상했습니다.</p>
+      <p class="entry-outcome">KAIST 모빌리티 연구소장 본선진출상을 수상했습니다. 차량 한 대의 판단을 잘 만드는 것과, 여러 대가 서로를 신뢰할 수 있게 만드는 것은 완전히 다른 문제라는 걸 배운 프로젝트였습니다.</p>
     </div>
 
     <div class="entry">
@@ -271,13 +288,13 @@
       <div class="entry-title">국토·교통 데이터 활용 경진대회</div>
       <div class="entry-org">한국공항공사 사장상 (우수상)</div>
       <div class="tags"><span class="tag">Python</span><span class="tag">OpenCV</span></div>
-      <p class="entry-lead">UAM(도심항공교통)이 상용화되려면 성능만큼이나 <strong>주민들이 실제로 받아들일 수 있는 소음 수준</strong>이 관건이라 판단해, 데이터 기반 소음 절감 항로 모델을 제안했습니다.</p>
+      <p class="entry-lead">UAM(도심항공교통)이 상용화되려면 기술보다 먼저 넘어야 할 것이 주민 수용성이라고 봤습니다. 아무리 효율적인 항로여도 <strong>사람이 사는 곳 위를 지나가면 결국 반대에 부딪히기</strong> 때문입니다.</p>
       <ul>
         <li>천만 건 규모의 교통 데이터를 분석해 지역별 인구 밀도, 시간대, 소음 민감도를 수치화</li>
         <li>OpenCV로 지도 이미지를 처리해 지역별 소음 민감도 가중치를 산출, 항로 설계 알고리즘에 반영</li>
         <li>소음 민감 지역을 우회하면서도 비행 효율을 크게 해치지 않는 항로 설계 로직을 완성해 UAM 항로 모델의 표준안으로 제시</li>
       </ul>
-      <p class="entry-outcome">단순 최단 경로가 아니라 "누가 소음 피해를 보는가"를 변수로 넣은 게 이 프로젝트의 차별점이었고, 이 접근으로 한국공항공사 사장상을 수상했습니다.</p>
+      <p class="entry-outcome">최단 경로 대신 "누가 소음 피해를 보는가"를 변수로 넣은 것이 이 모델의 차이였고, 이 접근으로 한국공항공사 사장상을 수상했습니다.</p>
     </div>
 
     <div class="entry">
@@ -285,25 +302,25 @@
       <div class="entry-title">CVIP 컴퓨터비전 연구실 학부연구생</div>
       <div class="entry-org">실시간 인원 인식 기반 자동 온도 제어 시스템</div>
       <div class="tags"><span class="tag">OpenCV</span><span class="tag">YOLOv5</span></div>
-      <p class="entry-lead">기존 냉방 시스템은 사람이 있든 없든 같은 온도를 유지해 전력을 낭비한다는 점에 착안해, <strong>실시간 인원 인식 기반 자동 온도 제어 시스템</strong>을 설계했습니다.</p>
+      <p class="entry-lead">강의실은 사람이 두 명이든 서른 명이든 같은 온도로 냉방됩니다. 그만큼 전력이 낭비된다는 점에 착안해, <strong>인원 수에 따라 온도가 자동으로 조절되는 시스템</strong>을 만들었습니다.</p>
       <ul>
         <li>스탠퍼드 CS231n 커리큘럼으로 신호처리와 이미지 분류·검출 이론을 독학</li>
         <li>YOLOv5 기반 실시간 사람 수 인식 모델을 구현하고, 에어컨 API와 연동해 인원 수에 따라 온도가 자동으로 바뀌는 구조를 완성</li>
       </ul>
-      <p class="entry-outcome">전공 수업(CS231n)에서 배운 이론을 처음으로 손에 잡히는 시스템으로 옮겨본 경험이었습니다.</p>
+      <p class="entry-outcome">독학한 이론을 처음으로 손에 잡히는 시스템으로 옮겨본 경험이었습니다. 논문에서 읽은 검출 정확도와 실제 강의실 조명 아래에서의 정확도가 꽤 다르다는 것도 이때 알았습니다.</p>
     </div>
 
     <div class="entry">
       <div class="entry-eyebrow"><span>🌏 커뮤니티</span><span class="entry-date">2024.03 &ndash; 2026.06</span></div>
       <div class="entry-title">인하대 국제학부 SGCS 근로장학생</div>
-      <div class="entry-org">외국인 학생 응대 · 행사 기획 (3년)</div>
-      <p class="entry-lead">한국어가 서툰 유학생에게는 사소한 행정 실수 하나가 비자 문제로 번질 수 있습니다. 매번 "이 학생 입장에서 지금 가장 급한 게 뭘까"부터 확인하는 걸 원칙으로 삼았습니다.</p>
+      <div class="entry-org">외국인 학생 응대 · 행사 기획</div>
+      <p class="entry-lead">한국어가 서툰 유학생에게는 사소한 행정 실수 하나가 비자 문제로 번질 수 있습니다. 그래서 매번 <strong>"이 학생 입장에서 지금 가장 급한 게 무엇인가"</strong>부터 확인하는 것을 원칙으로 삼았습니다.</p>
       <ul>
-        <li>3년간 비자 연장, 주거 문제 등 한국 생활 행정을 영어로 안내·상담</li>
-        <li>약속한 처리 기한은 반드시 지키는 방식으로 신뢰를 쌓아, 담당 교직원으로부터 "어디서든 환영받을 사람"이라는 평가를 받음</li>
+        <li>비자 연장, 주거 문제 등 한국 생활에 필요한 행정을 영어로 안내·상담</li>
+        <li>확실하지 않은 사항은 담당 부서에 직접 확인해 정확한 정보만 전달하고, 약속한 처리 기한은 반드시 지키는 방식으로 신뢰를 쌓음</li>
         <li>다양한 국적과 배경의 학생·교직원과 협업하며 글로벌 커뮤니케이션 역량을 키움</li>
       </ul>
-      <p class="entry-outcome">이 경험은 이후 IBK 인턴에서 "이 서비스를 받는 사람 입장에서 무엇이 문제인가"를 먼저 보는 습관으로 이어졌습니다.</p>
+      <p class="entry-outcome">학생들이 제가 자리에 없을 때도 저를 찾아왔고, 담당 교직원분께 "어디서든 환영받을 사람"이라는 평가를 받았습니다. 이 습관은 이후 IBK 인턴에서 "이 서비스를 받는 사람 입장에서 무엇이 문제인가"를 먼저 확인하는 방식으로 그대로 이어졌습니다.</p>
     </div>
 
   </section>
@@ -314,11 +331,11 @@
       <dt>Languages</dt>
       <dd>C/C++, Python, Java</dd>
       <dt>Domain</dt>
-      <dd>임베디드 시스템, CAN(CANopen) 통신, 컴퓨터비전, 데이터 분석, 금융 시스템 분석</dd>
+      <dd>임베디드 시스템, CAN(CANopen) 통신, 컴퓨터비전, RAG·LLM 애플리케이션, 데이터 분석, 금융 시스템 분석</dd>
       <dt>Frameworks</dt>
-      <dd>OpenCV, ROS2, CUDA, OpenMP, FastAPI</dd>
+      <dd>OpenCV, ROS2, CUDA, OpenMP, FastAPI, FAISS, Sentence Transformers</dd>
       <dt>Tools</dt>
-      <dd>Linux (Ubuntu), GDB, CMake, Git/GitHub</dd>
+      <dd>Linux (Ubuntu), AWS EC2, GDB, CMake, Git/GitHub</dd>
       <dt>Science Base</dt>
       <dd>컴퓨터기반선형대수, 현대물리학, 수리물리학 수강</dd>
     </dl>
@@ -330,7 +347,8 @@
       <div class="edu-school">인하대학교 컴퓨터공학과</div>
       <div class="edu-gpa">GPA 4.02 / 4.5</div>
       <div class="edu-detail">
-        <strong>우수 이수 과목:</strong> 오퍼레이팅시스템(A+), 컴퓨터네트워크(A+), 컴퓨터구조론(A+), 시스템프로그래밍(A+), 인공지능(A+), 현대물리학(A+), 컴퓨터기반선형대수(A+), 자바기반응용프로그래밍(A+), 리눅스 프로그래밍(A), 수리물리학(A) — 우수한 성적으로 이수
+        <strong>우수 이수 과목:</strong> 오퍼레이팅시스템(A+), 컴퓨터네트워크(A+), 컴퓨터구조론(A+), 시스템프로그래밍(A+), 인공지능(A+), 현대물리학(A+), 컴퓨터기반선형대수(A+), 자바기반응용프로그래밍(A+), 리눅스 프로그래밍(A), 수리물리학(A)<br>
+        <span style="color:var(--ink-faint);">로봇의 움직임을 물리적으로 설명하고 싶어 컴퓨터공학 전공임에도 물리학과 전공 수업을 수강했고, 기말고사에서 분반 1등을 기록했습니다.</span>
       </div>
     </div>
   </section>
@@ -362,13 +380,14 @@
   <section class="block list-block" style="border-top:1px solid var(--line); padding-top:20px;">
     <h2 class="section">Activities</h2>
     <ul>
-      <li><strong>대한민국 육군</strong> &mdash; 병장 만기 전역 (2022. 01 &ndash; 2023. 07)</li>
+      <li><strong>대한민국 육군</strong> &mdash; 만기 전역 (2022. 01 &ndash; 2023. 07)</li>
       <li><strong>인하대학교 CVIP 컴퓨터비전 연구실</strong> &mdash; 학부 연구생 (2024. 상반기)</li>
       <li><strong>인하대학교 국제학부</strong> &mdash; SGCS 근로학생 (2024. 03 &ndash; 2026. 06)</li>
       <li><strong>국토교통 데이터 활용 경진대회</strong> &mdash; 참가 및 한국공항공사 사장상 수상 (2024. 04 &ndash; 2024. 08)</li>
       <li><strong>한국과학기술연구원(KIST) 인공지능연구단</strong> &mdash; 학부 현장실습 (2024. 12 &ndash; 2025. 02)</li>
       <li><strong>IBK기업은행</strong> &mdash; IT 인턴 (2025. 07 &ndash; 2025. 08)</li>
       <li><strong>KAIST 자율주행 모빌리티 챌린지</strong> &mdash; 참가 및 본선진출 (2025. 10 &ndash; 2026. 02)</li>
+      <li><strong>졸업 캡스톤 프로젝트 FollowMe</strong> &mdash; 서버 · RAG 설계 담당 (2026. 03 &ndash; 2026. 06)</li>
     </ul>
   </section>
 
