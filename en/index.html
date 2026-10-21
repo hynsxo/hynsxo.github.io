@@ -6,7 +6,7 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Hyeonseo Lee</title>
   <meta
-    content="Hyunseo Lee, Computer Engineering graduate from Inha University. Embedded systems, AI applications, and data analytics projects."
+    content="Hyeonseo Lee, Computer Engineering graduate from Inha University. Embedded systems, AI applications, and data analytics projects."
     name="description" />
   <meta content="Hyeonseo Lee" property="og:title" />
   <meta
@@ -168,10 +168,51 @@
       color: var(--ink-soft);
       font-size: 12px;
       text-decoration: none;
+      text-underline-offset: 4px;
     }
 
     .section-nav a:hover {
       color: var(--accent);
+      text-decoration: underline;
+    }
+
+    /* Keep the section index fixed on the right while scrolling on wide screens. */
+    @media (min-width: 1040px) {
+      .langbar {
+        max-width: min(900px, calc(100vw - 270px));
+        margin-left: max(28px, calc((100vw - 900px) / 2));
+        margin-right: auto;
+      }
+
+      .wrap {
+        max-width: min(900px, calc(100vw - 270px));
+        margin-left: max(28px, calc((100vw - 900px) / 2));
+        margin-right: auto;
+      }
+
+      .section-nav {
+        position: fixed;
+        top: 50%;
+        right: clamp(18px, 2.5vw, 42px);
+        z-index: 50;
+        transform: translateY(-50%);
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        gap: 13px;
+        margin: 0;
+        padding: 0 0 0 15px;
+        border-left: 1px solid var(--line);
+        background: var(--paper);
+      }
+
+      .section-nav a {
+        display: block;
+        padding: 2px 0;
+        white-space: nowrap;
+        font-size: 12px;
+        line-height: 1.5;
+      }
     }
 
     .block {
@@ -411,6 +452,37 @@
       color: var(--ink-faint);
       font-size: 11px;
       letter-spacing: .02em;
+    }
+
+    /* Keep navigation accessible as a sticky horizontal bar on narrower screens. */
+    @media (max-width: 1039px) {
+      html {
+        scroll-padding-top: 64px;
+      }
+
+      .section-nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 22px;
+        overflow-x: auto;
+        margin: 0 0 38px;
+        padding: 12px 0 10px;
+        border-bottom: 1px solid var(--line);
+        background: var(--paper);
+        scrollbar-width: none;
+      }
+
+      .section-nav::-webkit-scrollbar {
+        display: none;
+      }
+
+      .section-nav a {
+        flex: 0 0 auto;
+        white-space: nowrap;
+      }
     }
 
     @media (max-width: 600px) {
