@@ -1,368 +1,647 @@
 <!DOCTYPE html>
 
 <html lang="ko">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>이현서 — 개발자 포트폴리오</title>
-<meta content="인하대학교 컴퓨터공학과 이현서의 포트폴리오입니다. 임베디드 시스템, AI 응용, 데이터 분석 프로젝트를 소개합니다." name="description"/>
-<meta content="이현서 | 개발자 포트폴리오" property="og:title"/>
-<meta content="데이터의 흐름을 추적하고, 시스템이 기대와 다르게 동작하는 원인을 찾아 해결합니다." property="og:description"/>
-<meta content="https://hynsxo.github.io/" property="og:url"/>
-<meta content="https://hynsxo.github.io/profile-preview.png" property="og:image"/>
-<!-- 본문은 Pretendard와 시스템 폰트를 우선 사용해 빠르고 자연스럽게 표시합니다. -->
-<link as="style" crossorigin="" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v3.2.1/dist/web/variable/pretendardvariable.css" rel="stylesheet"/>
-<style>
-  :root {
-    --paper: #ffffff;
-    --paper-raised: #ffffff;
-    --ink: #0a0a0a;
-    --ink-soft: #292929;
-    --ink-faint: #555555;
-    --accent: #111111;
-    --line: #d8d8d8;
-  }
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>이현서 — 개발자 포트폴리오</title>
+  <meta content="인하대학교 컴퓨터공학과 이현서의 포트폴리오입니다. 임베디드 시스템, AI 응용, 데이터 분석 프로젝트를 소개합니다." name="description" />
+  <meta content="이현서 | 개발자 포트폴리오" property="og:title" />
+  <meta content="데이터의 흐름을 추적하고, 시스템이 기대와 다르게 동작하는 원인을 찾아 해결합니다." property="og:description" />
+  <meta content="https://hynsxo.github.io/" property="og:url" />
+  <meta content="https://hynsxo.github.io/profile-preview.png" property="og:image" />
+  <!-- 본문은 Pretendard와 시스템 폰트를 우선 사용해 빠르고 자연스럽게 표시합니다. -->
+  <link as="style" crossorigin=""
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v3.2.1/dist/web/variable/pretendardvariable.css"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #ffffff;
+      --paper-raised: #ffffff;
+      --ink: #0a0a0a;
+      --ink-soft: #292929;
+      --ink-faint: #555555;
+      --accent: #111111;
+      --line: #d8d8d8;
+    }
 
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; scroll-padding-top: 24px; }
-  body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont,
-      'Segoe UI', 'Apple SD Gothic Neo', Arial, sans-serif;
-    font-size: 16.5px;
-    line-height: 1.78;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-  }
-  a { color: inherit; }
-  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    * {
+      box-sizing: border-box;
+    }
 
-  .langbar {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 22px 28px 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 18px;
-  }
-  .langbar a {
-    color: var(--ink-soft);
-    font-size: 12px;
-    text-decoration: none;
-    border-bottom: 1px solid var(--line);
-    padding-bottom: 2px;
-  }
-  .langbar a:hover { color: var(--accent); border-color: var(--accent); }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 24px;
+    }
 
-  .wrap { max-width: 900px; margin: 0 auto; padding: 0 28px 76px; }
-  .hero {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 112px;
-    grid-template-rows: auto auto auto auto;
-    column-gap: 34px;
-    align-items: start;
-    padding: 62px 0 40px;
-    border-bottom: 1px solid var(--line);
-  }
-  .avatar {
-    grid-column: 2;
-    grid-row: 1 / span 4;
-    width: 112px;
-    height: 128px;
-    object-fit: cover;
-    object-position: center;
-    margin: 5px 0 0;
-    display: block;
-    border: 1px solid var(--line);
-    border-radius: 2px;
-  }
-  .hero-kicker {
-    grid-column: 1;
-    margin: 0 0 8px;
-    color: var(--accent);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: .08em;
-  }
-  h1.name {
-    grid-column: 1;
-    margin: 0 0 12px;
-    color: var(--ink);
-    font-size: clamp(2.35rem, 5.5vw, 3.35rem);
-    font-weight: 800;
-    letter-spacing: -.045em;
-    line-height: 1.15;
-  }
-  .tagline {
-    grid-column: 1;
-    max-width: 620px;
-    margin: 0 0 17px;
-    color: var(--ink-soft);
-    font-size: 1.08rem;
-    line-height: 1.78;
-    word-break: keep-all;
-  }
-  .roleline {
-    grid-column: 1;
-    color: var(--ink-faint);
-    font-size: 12.5px;
-    line-height: 1.8;
-  }
-  .roleline a {
-    color: var(--ink);
-    text-decoration: none;
-    border-bottom: 1px solid #c9c7c0;
-  }
-  .roleline a:hover { color: var(--accent); border-color: var(--accent); }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont,
+        'Segoe UI', 'Apple SD Gothic Neo', Arial, sans-serif;
+      font-size: 16.5px;
+      line-height: 1.78;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
 
-  .section-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 22px;
-    padding: 13px 0 0;
-    margin-bottom: 48px;
-  }
-  .section-nav a {
-    color: var(--ink-soft);
-    font-size: 12px;
-    text-decoration: none;
-  }
-  .section-nav a:hover { color: var(--accent); }
+    a {
+      color: inherit;
+    }
 
-  .block { margin-bottom: 48px; }
-  .block:last-child { margin-bottom: 0; }
-  h2.section {
-    margin: 0 0 17px;
-    padding: 0 0 10px;
-    border-bottom: 1px solid var(--line);
-    color: var(--ink);
-    font-size: 1.1rem;
-    font-weight: 800;
-    letter-spacing: -.02em;
-  }
-  .about p { margin: 0 0 13px; }
-  .about p:last-child { margin-bottom: 0; }
-  .about .thesis {
-    margin: 17px 0 0;
-    padding: 0 0 0 14px;
-    border-left: 2px solid var(--accent);
-    color: var(--ink-soft);
-    font-weight: 450;
-  }
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
 
-  .entry { padding: 25px 0 27px; border-top: 1px solid var(--line); }
-  .entry:first-of-type { border-top: 0; padding-top: 0; }
-  .entry-eyebrow {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: 5px 16px;
-    margin-bottom: 5px;
-    color: var(--accent);
-    font-size: 12px;
-    font-weight: 650;
-  }
-  .entry-date { color: #444444; font-weight: 400; font-variant-numeric: tabular-nums; }
-  .entry-title {
-    margin: 0 0 2px;
-    color: var(--ink);
-    font-size: 1.22rem;
-    font-weight: 800;
-    letter-spacing: -.025em;
-    line-height: 1.45;
-  }
-  .entry-org { margin-bottom: 9px; color: #292929; font-size: .94rem; }
-  .tags { display: flex; flex-wrap: wrap; gap: 0; margin: 0 0 12px; }
-  .tag {
-    padding: 0;
-    border: 0;
-    border-radius: 0;
-    background: transparent;
-    color: #444444;
-    font-size: 12px;
-    line-height: 1.7;
-  }
-  .tag + .tag::before { content: '·'; display: inline-block; margin: 0 8px; color: #666666; }
-  .entry-lead { margin: 0 0 10px; color: var(--ink); font-size: .96rem; font-weight: 500; }
-  .entry ul { margin: 0 0 12px; padding-left: 19px; color: var(--ink-soft); font-size: .92rem; }
-  .entry li { margin-bottom: 5px; padding-left: 2px; }
-  .entry li::marker { color: #222222; }
-  .entry-outcome { margin: 13px 0 0; padding: 0; color: var(--ink-soft); font-size: .92rem; }
-  .entry-outcome::before { content: '결과'; margin-right: 9px; color: var(--accent); font-weight: 750; white-space: nowrap; }
+    .langbar {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 22px 28px 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 18px;
+    }
 
-  .skills-grid {
-    display: grid;
-    grid-template-columns: 150px minmax(0, 1fr);
-    gap: 12px 22px;
-    margin: 0;
-    padding-top: 2px;
-    font-size: .93rem;
-  }
-  .skills-grid dt { color: var(--ink); font-weight: 700; }
-  .skills-grid dd { margin: 0; color: var(--ink-soft); }
+    .langbar a {
+      color: var(--ink-soft);
+      font-size: 12px;
+      text-decoration: none;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 2px;
+    }
 
-  .edu-item { padding-top: 2px; }
-  .edu-school { font-size: 1.12rem; font-weight: 750; letter-spacing: -.025em; }
-  .edu-gpa { margin-top: 3px; color: var(--accent); font-size: .9rem; font-weight: 650; }
-  .edu-detail { margin-top: 10px; color: var(--ink-soft); font-size: .9rem; line-height: 1.8; }
-  .edu-detail strong { color: var(--ink); font-weight: 650; }
-  .edu-detail span { color: var(--ink-faint) !important; }
+    .langbar a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
 
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 42px; }
-  .list-block ul { margin: 0; padding: 0; list-style: none; }
-  .list-block li { position: relative; margin: 0 0 7px; padding-left: 13px; color: var(--ink-soft); font-size: .91rem; }
-  .list-block li::before { content: '·'; position: absolute; left: 0; top: 0; color: var(--accent); font-weight: 800; }
-  .list-block strong { color: var(--ink); font-weight: 650; }
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 28px 76px;
+    }
 
-  footer { margin-top: 42px; padding-top: 15px; border-top: 1px solid var(--line); text-align: left; }
-  .footer-note { margin: 0; color: var(--ink-faint); font-size: 11px; letter-spacing: .02em; }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 112px;
+      grid-template-rows: auto auto auto auto;
+      column-gap: 34px;
+      align-items: start;
+      padding: 62px 0 40px;
+      border-bottom: 1px solid var(--line);
+    }
 
-  @media (max-width: 600px) {
-    .langbar { padding: 18px 20px 0; }
-    .wrap { padding: 0 20px 48px; }
-    .hero { grid-template-columns: minmax(0, 1fr) 72px; column-gap: 16px; padding: 39px 0 27px; }
-    .avatar { width: 72px; height: 86px; margin-top: 5px; }
-    .hero-kicker { font-size: 10px; }
-    h1.name { font-size: 2.1rem; }
-    .tagline { font-size: .97rem; }
-    .roleline { font-size: 11.5px; }
-    .section-nav { gap: 16px; margin-bottom: 38px; }
-    .block { margin-bottom: 40px; }
-    .skills-grid { grid-template-columns: 1fr; gap: 4px; }
-    .skills-grid dt:not(:first-child) { margin-top: 10px; }
-    .two-col { grid-template-columns: 1fr; gap: 30px; }
-  }
-  @media (max-width: 390px) {
-    .hero { grid-template-columns: minmax(0, 1fr) 58px; column-gap: 12px; }
-    .avatar { width: 58px; height: 72px; }
-    h1.name { font-size: 1.85rem; }
-    .section-nav { gap: 12px; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-  }
-</style>
+    .avatar {
+      grid-column: 2;
+      grid-row: 1 / span 4;
+      width: 112px;
+      height: 128px;
+      object-fit: cover;
+      object-position: center;
+      margin: 5px 0 0;
+      display: block;
+      border: 1px solid var(--line);
+      border-radius: 2px;
+    }
+
+    .hero-kicker {
+      grid-column: 1;
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+    }
+
+    h1.name {
+      grid-column: 1;
+      margin: 0 0 12px;
+      color: var(--ink);
+      font-size: clamp(2.35rem, 5.5vw, 3.35rem);
+      font-weight: 800;
+      letter-spacing: -.045em;
+      line-height: 1.15;
+    }
+
+    .tagline {
+      grid-column: 1;
+      max-width: 620px;
+      margin: 0 0 17px;
+      color: var(--ink-soft);
+      font-size: 1.08rem;
+      line-height: 1.78;
+      word-break: keep-all;
+    }
+
+    .roleline {
+      grid-column: 1;
+      color: var(--ink-faint);
+      font-size: 12.5px;
+      line-height: 1.8;
+    }
+
+    .roleline a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid #c9c7c0;
+    }
+
+    .roleline a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .section-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      padding: 13px 0 0;
+      margin-bottom: 48px;
+    }
+
+    .section-nav a {
+      color: var(--ink-soft);
+      font-size: 12px;
+      text-decoration: none;
+    }
+
+    .section-nav a:hover {
+      color: var(--accent);
+    }
+
+    .block {
+      margin-bottom: 48px;
+    }
+
+    .block:last-child {
+      margin-bottom: 0;
+    }
+
+    h2.section {
+      margin: 0 0 17px;
+      padding: 0 0 10px;
+      border-bottom: 1px solid var(--line);
+      color: var(--ink);
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: -.02em;
+    }
+
+    .about p {
+      margin: 0 0 13px;
+    }
+
+    .about p:last-child {
+      margin-bottom: 0;
+    }
+
+    .about .thesis {
+      margin: 17px 0 0;
+      padding: 0 0 0 14px;
+      border-left: 2px solid var(--accent);
+      color: var(--ink-soft);
+      font-weight: 450;
+    }
+
+    .entry {
+      padding: 25px 0 27px;
+      border-top: 1px solid var(--line);
+    }
+
+    .entry:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .entry-eyebrow {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 5px 16px;
+      margin-bottom: 5px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    .entry-date {
+      color: #444444;
+      font-weight: 400;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .entry-title {
+      margin: 0 0 2px;
+      color: var(--ink);
+      font-size: 1.22rem;
+      font-weight: 800;
+      letter-spacing: -.025em;
+      line-height: 1.45;
+    }
+
+    .entry-org {
+      margin-bottom: 9px;
+      color: #292929;
+      font-size: .94rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      margin: 0 0 12px;
+    }
+
+    .tag {
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: #444444;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .tag+.tag::before {
+      content: '·';
+      display: inline-block;
+      margin: 0 8px;
+      color: #666666;
+    }
+
+    .entry-lead {
+      margin: 0 0 10px;
+      color: var(--ink);
+      font-size: .96rem;
+      font-weight: 500;
+    }
+
+    .entry ul {
+      margin: 0 0 12px;
+      padding-left: 19px;
+      color: var(--ink-soft);
+      font-size: .92rem;
+    }
+
+    .entry li {
+      margin-bottom: 5px;
+      padding-left: 2px;
+    }
+
+    .entry li::marker {
+      color: #222222;
+    }
+
+    .entry-outcome {
+      margin: 13px 0 0;
+      padding: 0;
+      color: var(--ink-soft);
+      font-size: .92rem;
+    }
+
+    .entry-outcome::before {
+      content: '결과';
+      margin-right: 9px;
+      color: var(--accent);
+      font-weight: 750;
+      white-space: nowrap;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr);
+      gap: 12px 22px;
+      margin: 0;
+      padding-top: 2px;
+      font-size: .93rem;
+    }
+
+    .skills-grid dt {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .skills-grid dd {
+      margin: 0;
+      color: var(--ink-soft);
+    }
+
+    .edu-item {
+      padding-top: 2px;
+    }
+
+    .edu-school {
+      font-size: 1.12rem;
+      font-weight: 750;
+      letter-spacing: -.025em;
+    }
+
+    .edu-gpa {
+      margin-top: 3px;
+      color: var(--accent);
+      font-size: .9rem;
+      font-weight: 650;
+    }
+
+    .edu-detail {
+      margin-top: 10px;
+      color: var(--ink-soft);
+      font-size: .9rem;
+      line-height: 1.8;
+    }
+
+    .edu-detail strong {
+      color: var(--ink);
+      font-weight: 650;
+    }
+
+    .edu-detail span {
+      color: var(--ink-faint) !important;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 42px;
+    }
+
+    .list-block ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .list-block li {
+      position: relative;
+      margin: 0 0 7px;
+      padding-left: 13px;
+      color: var(--ink-soft);
+      font-size: .91rem;
+    }
+
+    .list-block li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .list-block strong {
+      color: var(--ink);
+      font-weight: 650;
+    }
+
+    footer {
+      margin-top: 42px;
+      padding-top: 15px;
+      border-top: 1px solid var(--line);
+      text-align: left;
+    }
+
+    .footer-note {
+      margin: 0;
+      color: var(--ink-faint);
+      font-size: 11px;
+      letter-spacing: .02em;
+    }
+
+    @media (max-width: 600px) {
+      .langbar {
+        padding: 18px 20px 0;
+      }
+
+      .wrap {
+        padding: 0 20px 48px;
+      }
+
+      .hero {
+        grid-template-columns: minmax(0, 1fr) 72px;
+        column-gap: 16px;
+        padding: 39px 0 27px;
+      }
+
+      .avatar {
+        width: 72px;
+        height: 86px;
+        margin-top: 5px;
+      }
+
+      .hero-kicker {
+        font-size: 10px;
+      }
+
+      h1.name {
+        font-size: 2.1rem;
+      }
+
+      .tagline {
+        font-size: .97rem;
+      }
+
+      .roleline {
+        font-size: 11.5px;
+      }
+
+      .section-nav {
+        gap: 16px;
+        margin-bottom: 38px;
+      }
+
+      .block {
+        margin-bottom: 40px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+
+      .skills-grid dt:not(:first-child) {
+        margin-top: 10px;
+      }
+
+      .two-col {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr) 58px;
+        column-gap: 12px;
+      }
+
+      .avatar {
+        width: 58px;
+        height: 72px;
+      }
+
+      h1.name {
+        font-size: 1.85rem;
+      }
+
+      .section-nav {
+        gap: 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<div class="langbar">
-<a href="https://hynsxo.github.io/en/">English version ↗</a>
-</div>
-<div class="wrap">
-<header class="hero">
-<img alt="이현서 프로필" class="avatar" onerror="this.style.display='none'" src="profile-preview.png"/>
-<p class="hero-kicker">컴퓨터공학 · 시스템 개발 · AI 응용</p>
-<h1 class="name">이현서</h1>
-<p class="tagline">시스템이 기대와 다르게 동작하는 원인을 데이터 흐름과 구현 구조에서 찾고, 실제 개선으로 연결합니다.</p>
-<div class="roleline">인하대학교 컴퓨터공학과 · GPA 4.02 / 4.5 · <a href="mailto:hynsxo@gmail.com">이메일 ↗</a></div>
-</header>
-<nav aria-label="페이지 바로가기" class="section-nav">
-<a href="#projects">프로젝트</a>
-<a href="#skills">기술</a>
-<a href="#education">학력</a>
-<a href="#credentials">자격 및 수상</a>
-</nav>
-<section class="block about" id="about">
-<h2 class="section">소개</h2>
-<p>저는 시스템이 예상대로 동작하지 않을 때 현상을 재현하고, 데이터 흐름과 구현 구조를 살펴 원인을 좁혀 가는 데 강점이 있습니다. KIST 로봇 프로젝트에서는 CANopen 통신과 모터 제어 흐름을 분석했고, 금융 시스템에서는 현장의 피드백과 오류 데이터를 바탕으로 개선안을 제안했습니다. 자율주행과 교통 데이터 분석 프로젝트에서도 여러 조건과 데이터를 검토해 실행 가능한 해결 방안을 구체화했습니다.</p>
-<div class="thesis">문제를 빠르게 덮기보다 데이터가 생성되고 전달되고 활용되는 과정을 확인합니다. 로그, 프로토콜 문서, 사용자 피드백, 실험 결과를 근거로 원인을 설명하고 실행 가능한 해결책으로 연결합니다.</div>
-<p style="margin-top:14px;">아래에는 프로젝트별 담당 역할과 주요 기술적 판단, 구현 내용, 결과를 중심으로 경험을 정리했습니다.</p>
-</section>
-<section class="block" id="projects">
-<h2 class="section">프로젝트 및 경험</h2><div class="entry">
-<div class="entry-eyebrow"><span>로보틱스 · 임베디드</span><span class="entry-date">2024.12 – 2025.02</span></div>
-<div class="entry-title">한국과학기술연구원(KIST) 인공지능연구단 학부 현장실습</div>
-<div class="entry-org">10자유도 양팔 드럼 연주 로봇</div>
-<div class="tags"><span class="tag">C/C++</span><span class="tag">CANopen</span><span class="tag">GDB</span></div>
-<p class="entry-lead">10자유도 양팔 로봇의 드럼 연주 동작을 개발했습니다. 타격 순간 팔의 움직임이 미세하게 어긋나는 현상이 발생했지만 제어 주기 조정만으로는 해결되지 않아, CANopen 통신 데이터와 모터 제어 흐름을 추적했습니다.</p>
-<ul>
-<li>포지션·토크 제어 모드가 전환될 때 모터 위치값 갱신이 기존 5ms 주기보다 늦어지는 현상을 확인</li>
-<li>제어 모드 전환 구간의 위치값을 SDO로 확인하도록 기존 PDO 통신을 보완한 하이브리드 구조를 제안·구현</li>
-<li>로봇 허리 움직임을 줄이는 궤적 생성에 다익스트라 알고리즘과 보간법을 적용하고, 모터 PID 튜닝 및 GDB 디버깅 수행</li>
-<li>시뮬레이션에서 재현되지 않은 실제 충돌을 분석해 관절 부품의 마모 상태가 시뮬레이션에 반영되지 않았음을 확인</li>
-<li>GitHub 협업 규칙과 연주 상태 기반 코드 흐름 다이어그램을 정리해 팀과 공유</li>
-</ul>
-<p class="entry-outcome">통신 구조를 보완해 타격 동작을 개선하고 전체 개발 기간을 약 2개월 단축했습니다. 또한 시뮬레이션 결과와 실제 하드웨어 상태를 함께 검증해야 한다는 점을 경험하며, 코드와 시스템 구조를 문서로 남겨 후속 개발의 진입 장벽도 낮췄습니다.</p>
-</div><div class="entry">
-<div class="entry-eyebrow"><span>금융 시스템</span><span class="entry-date">2025.07 – 2025.08</span></div>
-<div class="entry-title">IBK기업은행 IT금융개발부 청년인턴</div>
-<div class="entry-org">33기 우수 인턴 선정</div>
-<div class="tags"><span class="tag">금융 시스템 분석</span><span class="tag">데이터 흐름</span><span class="tag">서비스 설계</span></div>
-<p class="entry-lead">해외송금 과정에서 수취 계좌 정보 오류가 발생하면 고객은 취소 수수료를 부담하고 은행은 사후 처리 업무를 수행해야 합니다. 반복 오류를 줄이기 위해 실제 업무를 담당하는 행원들을 찾아가 오류가 발생하는 상황부터 확인했습니다.</p>
-<ul>
-<li>은행 계정계 시스템의 데이터 흐름을 분석하고 주요 처리 과정을 도식화</li>
-<li>현장 의견과 과거 오류 사례를 유형별로 살펴 특정 국가·은행 코드 조합에서 반복되는 패턴을 확인</li>
-<li>SWIFT 사전 검증, 내부 송금 이력, 룰 기반 필터링을 결합한 3단계 검증 프로세스 설계</li>
-<li>아이디어 제안에 그치지 않고 기존 시스템 구조와 연계 가능성을 검토해 제안서 작성</li>
-</ul>
-<p class="entry-outcome">제안이 실제 개발 안건으로 채택되어 33기 우수 인턴으로 선정되었습니다. 현장의 업무 경험과 데이터를 함께 살펴야 문서만으로는 발견하기 어려운 오류 패턴을 찾을 수 있다는 점을 배웠습니다.</p>
-</div><div class="entry">
-<div class="entry-eyebrow"><span>데이터 분석</span><span class="entry-date">2024.04 – 2024.08</span></div>
-<div class="entry-title">국토·교통 데이터 활용 경진대회</div>
-<div class="entry-org">팀 UAIN · 한국공항공사 사장상(우수상)</div>
-<div class="tags"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">QGIS</span><span class="tag">회귀분석</span></div>
-<p class="entry-lead">UAM 항로 설계 단계에서 주변 지역의 소음 영향을 비교할 수 있도록, 실측 항공소음 데이터와 건물 용도 정보를 결합한 소음 분석 모델을 제안했습니다.</p>
-<ul>
-<li>광역교통 수요 데이터를 바탕으로 UAM 수요가 집중될 서울 도심의 강남·홍대입구·서울역을 분석 지점으로 선정</li>
-<li>QGIS로 건물 용도별 비율을 지도화하고, 주거·상업지역의 소음 기준을 바탕으로 지역별 민감도 가중치 산정</li>
-<li>김포공항 실측 항공소음 기반 다항 회귀모델과 UAM 소음 인증기준 기반 로그 회귀모델을 결합해 거리별 소음 예측</li>
-<li>4개 항로 방향과 격자별 예측값을 비교해 항로 방향에 따른 소음 영향 차이를 분석</li>
-</ul>
-<p class="entry-outcome">서울역의 평균 이상 소음 가중치 영역 비율은 동서 항로 39.7%, 남서–북동 항로 31.8%로 나타났습니다. 분석 결과를 항로 설계와 소음대책지역 검토에 활용할 수 있는 기준으로 제안해 한국공항공사 사장상을 수상했습니다.</p>
-</div><div class="entry">
-<div class="entry-eyebrow"><span>협력 자율주행</span><span class="entry-date">2025.10 – 2026.02</span></div>
-<div class="entry-title">KAIST 모빌리티 챌린지 본선진출상</div>
-<div class="entry-org">팀 카스피 · V2V/V2I 협력 자율주행 및 LiDAR</div>
-<div class="tags"><span class="tag">V2V·V2I</span><span class="tag">LiDAR</span><span class="tag">우선순위 알고리즘</span></div>
-<p class="entry-lead">여러 차량이 교차로에 동시에 접근할 때 충돌 없이 통과할 수 있도록, 차량 간 정보를 바탕으로 통행 순서를 정하는 우선순위 판단 알고리즘을 담당했습니다.</p>
-<ul>
-<li>LiDAR 센서를 활용한 소형 차량의 협력 자율주행 구현에 참여</li>
-<li>차량 간 위치·속도 데이터를 바탕으로 교차로 통행 우선순위를 결정하는 알고리즘 설계</li>
-<li>다수 차량이 동시에 진입하는 상황을 구성해 충돌 없이 통과하는지 로직 검증</li>
-</ul>
-<p class="entry-outcome">KAIST 모빌리티 연구소장 본선진출상을 수상했습니다. 개별 차량의 판단뿐 아니라 차량 간 정보 공유와 우선순위 조정이 협력 자율주행에서 중요하다는 점을 확인했습니다.</p>
-</div><div class="entry">
-<div class="entry-eyebrow"><span>커뮤니케이션 · 운영 지원</span><span class="entry-date">2024.03 – 2026.06</span></div>
-<div class="entry-title">인하대학교 국제학부 SGCS 근로장학생</div>
-<div class="entry-org">외국인 학생 응대 및 행사 지원</div>
-<p class="entry-lead">외국인 학생이 한국 생활과 학사 행정에서 겪는 문제를 파악하고, 정확한 정보를 이해하기 쉬운 영어로 전달하는 역할을 맡았습니다.</p>
-<ul>
-<li>비자 연장과 주거 등 한국 생활에 필요한 행정 절차를 영어로 안내</li>
-<li>확실하지 않은 사항은 담당 부서에 확인한 뒤 전달하고, 약속한 처리 기한을 지키며 신뢰 형성</li>
-<li>다양한 국적의 학생 및 교직원과 협업하며 상황에 맞는 커뮤니케이션 역량 강화</li>
-</ul>
-<p class="entry-outcome">학생들이 담당자가 자리를 비운 뒤에도 저를 찾아올 만큼 신뢰를 쌓았으며, 담당 교직원으로부터 어디서든 환영받을 사람이라는 평가를 받았습니다. 상대방의 상황부터 확인하는 태도는 이후 금융 서비스 개선 과제에서도 이어졌습니다.</p>
-</div><div class="entry">
-<div class="entry-eyebrow"><span>AI · 백엔드</span><span class="entry-date">2026.03 – 2026.06</span></div>
-<div class="entry-title">FollowMe — 일기 기반 개인화 예측 서비스</div>
-<div class="entry-org">졸업 캡스톤 팀 프로젝트 · 서버 및 RAG 설계</div>
-<div class="tags"><span class="tag">FastAPI</span><span class="tag">AWS EC2</span><span class="tag">FAISS</span><span class="tag">MiniLM</span><span class="tag">GPT API</span></div>
-<p class="entry-lead">8년간 일기를 기록하며 컨디션과 상황을 고려하지 않은 계획은 지키기 어렵다는 점을 체감한 데서 출발했습니다. 과거 기록을 검색해 다음 날을 예측하고 미션을 제안하는 서비스에서 서버와 RAG 구조 설계를 담당했습니다.</p>
-<ul>
-<li>앱은 입력과 화면 표시를 담당하고, AWS EC2의 FastAPI 서버가 임베딩·벡터 검색·GPT API 호출을 처리하도록 역할을 분리</li>
-<li>성향 점수 대신 일기 텍스트를 검색 대상으로 삼아 과거의 감정과 상황이 담긴 기록을 예측 근거로 활용</li>
-<li>당일 일기를 쿼리로 FAISS에서 L2 거리 기반 검색을 수행하고, 유사한 과거 기록을 GPT 프롬프트에 포함해 자정 예측 실행</li>
-<li>한국어 처리, CPU 기반 EC2 구동, 문장 유사도를 고려해 paraphrase-multilingual-MiniLM-L12-v2(384차원)를 선정하고 배포</li>
-<li>전화번호·주민등록번호 등 민감정보를 정규식으로 마스킹하고, 미션 완료에 따라 성향 점수가 갱신되어 다음 예측에 반영되는 구조 구현</li>
-</ul>
-<p class="entry-outcome">같은 수업 수강생 30명이 한 달간 사용했습니다. 사용자별 기록에 따라 검색되는 과거 사례와 예측 근거가 달라지는 개인화 흐름을 실제 사용 환경에서 확인했습니다.</p>
-</div><div class="entry">
-<div class="entry-eyebrow"><span>컴퓨터 비전</span><span class="entry-date">2024년 1학기</span></div>
-<div class="entry-title">CVIP 컴퓨터비전 연구실 학부연구생</div>
-<div class="entry-org">실시간 인원 인식 기반 자동 온도 제어 시스템</div>
-<div class="tags"><span class="tag">PyTorch</span><span class="tag">YOLOv5</span><span class="tag">OpenCV</span></div>
-<p class="entry-lead">객체 인식 모델을 실제 기능으로 연결하기 위해, 강의실 인원 수에 따라 냉방 온도를 조절하는 시스템을 구현했습니다.</p>
-<ul>
-<li>Roboflow 공개 데이터셋으로 사람 객체 인식 학습 데이터를 구성하고 PyTorch에서 YOLOv5 모델 학습</li>
-<li>OpenCV로 실시간 영상 스트림을 처리해 화면 속 사람 수를 계산</li>
-<li>인원 수에 따라 목표 온도를 계산하고 에어컨 API에 전달하는 제어 흐름 구현</li>
-<li>관련 모델 구조를 이해하기 위해 FPN과 Focal Loss 등 객체 탐지 기법으로 학습 범위 확장</li>
-</ul>
-<p class="entry-outcome">객체 탐지 모델의 출력값을 온도 제어 기능으로 연결하며, 모델 성능뿐 아니라 예측 결과를 실제 서비스에서 어떻게 활용할지도 함께 고려했습니다.</p>
-</div>
+  <div class="langbar">
+    <a href="https://hynsxo.github.io/en/">English version ↗</a>
+  </div>
+  <div class="wrap">
+    <header class="hero">
+      <img alt="이현서 프로필" class="avatar" onerror="this.style.display='none'" src="profile-preview.png" />
+      <p class="hero-kicker">컴퓨터공학 · 시스템 개발 · AI 응용</p>
+      <h1 class="name">이현서</h1>
+      <p class="tagline">시스템이 기대와 다르게 동작하는 원인을 데이터 흐름과 구현 구조에서 찾고, 실제 개선으로 연결합니다.</p>
+      <div class="roleline">인하대학교 컴퓨터공학과 · GPA 4.02 / 4.5 · <a href="mailto:hynsxo@gmail.com">이메일 ↗</a></div>
+    </header>
+    <nav aria-label="페이지 바로가기" class="section-nav">
+      <a href="#projects">프로젝트</a>
+      <a href="#skills">기술</a>
+      <a href="#education">학력</a>
+      <a href="#credentials">자격 및 수상</a>
+    </nav>
+    <section class="block about" id="about">
+      <h2 class="section">소개</h2>
+      <p>저는 시스템이 예상대로 동작하지 않을 때 현상을 재현하고, 데이터 흐름과 구현 구조를 살펴 원인을 좁혀 가는 데 강점이 있습니다. KIST 로봇 프로젝트에서는 CANopen 통신과 모터 제어 흐름을
+        분석했고, 금융 시스템에서는 현장의 피드백과 오류 데이터를 바탕으로 개선안을 제안했습니다. 자율주행과 교통 데이터 분석 프로젝트에서도 여러 조건과 데이터를 검토해 실행 가능한 해결 방안을
+        구체화했습니다.</p>
+      <div class="thesis">문제를 빠르게 덮기보다 데이터가 생성되고 전달되고 활용되는 과정을 확인합니다. 로그, 프로토콜 문서, 사용자 피드백, 실험 결과를 근거로 원인을 설명하고 실행 가능한
+        해결책으로 연결합니다.</div>
+      <p style="margin-top:14px;">아래에는 프로젝트별 담당 역할과 주요 기술적 판단, 구현 내용, 결과를 중심으로 경험을 정리했습니다.</p>
+    </section>
+    <section class="block" id="projects">
+      <h2 class="section">프로젝트 및 경험</h2>
+      <div class="entry">
+        <div class="entry-eyebrow"><span>로보틱스 · 임베디드</span><span class="entry-date">2024.12 – 2025.02</span></div>
+        <div class="entry-title">한국과학기술연구원(KIST) 인공지능연구단 학부 현장실습</div>
+        <div class="entry-org">10자유도 양팔 드럼 연주 로봇</div>
+        <div class="tags"><span class="tag">C/C++</span><span class="tag">CANopen</span><span class="tag">GDB</span>
+        </div>
+        <p class="entry-lead">10자유도 양팔 로봇의 드럼 연주 동작을 개발했습니다. 타격 순간 팔의 움직임이 미세하게 어긋나는 현상이 발생했지만 제어 주기 조정만으로는 해결되지 않아,
+          CANopen 통신 데이터와 모터 제어 흐름을 추적했습니다.</p>
+        <ul>
+          <li>포지션·토크 제어 모드가 전환될 때 모터 위치값 갱신이 기존 5ms 주기보다 늦어지는 현상을 확인</li>
+          <li>제어 모드 전환 구간의 위치값을 SDO로 확인하도록 기존 PDO 통신을 보완한 하이브리드 구조를 제안·구현</li>
+          <li>로봇 허리 움직임을 줄이는 궤적 생성에 다익스트라 알고리즘과 보간법을 적용하고, 모터 PID 튜닝 및 GDB 디버깅 수행</li>
+          <li>시뮬레이션에서 재현되지 않은 실제 충돌을 분석해 관절 부품의 마모 상태가 시뮬레이션에 반영되지 않았음을 확인</li>
+          <li>GitHub 협업 규칙과 연주 상태 기반 코드 흐름 다이어그램을 정리해 팀과 공유</li>
+        </ul>
+        <p class="entry-outcome">통신 구조를 보완해 타격 동작을 개선하고 전체 개발 기간을 약 2개월 단축했습니다. 또한 시뮬레이션 결과와 실제 하드웨어 상태를 함께 검증해야 한다는 점을
+          경험하며, 코드와 시스템 구조를 문서로 남겨 후속 개발의 진입 장벽도 낮췄습니다.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-eyebrow"><span>금융 시스템</span><span class="entry-date">2025.07 – 2025.08</span></div>
+        <div class="entry-title">IBK기업은행 IT금융개발부 청년인턴</div>
+        <div class="entry-org">33기 우수 인턴 선정</div>
+        <div class="tags"><span class="tag">금융 시스템 분석</span><span class="tag">데이터 흐름</span><span class="tag">서비스
+            설계</span></div>
+        <p class="entry-lead">해외송금 과정에서 수취 계좌 정보 오류가 발생하면 고객은 취소 수수료를 부담하고 은행은 사후 처리 업무를 수행해야 합니다. 반복 오류를 줄이기 위해 실제 업무를
+          담당하는 행원들을 찾아가 오류가 발생하는 상황부터 확인했습니다.</p>
+        <ul>
+          <li>은행 계정계 시스템의 데이터 흐름을 분석하고 주요 처리 과정을 도식화</li>
+          <li>현장 의견과 과거 오류 사례를 유형별로 살펴 특정 국가·은행 코드 조합에서 반복되는 패턴을 확인</li>
+          <li>SWIFT 사전 검증, 내부 송금 이력, 룰 기반 필터링을 결합한 3단계 검증 프로세스 설계</li>
+          <li>아이디어 제안에 그치지 않고 기존 시스템 구조와 연계 가능성을 검토해 제안서 작성</li>
+        </ul>
+        <p class="entry-outcome">제안이 실제 개발 안건으로 채택되어 33기 우수 인턴으로 선정되었습니다. 현장의 업무 경험과 데이터를 함께 살펴야 문서만으로는 발견하기 어려운 오류 패턴을
+          찾을 수 있다는 점을 배웠습니다.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-eyebrow"><span>데이터 분석</span><span class="entry-date">2024.04 – 2024.08</span></div>
+        <div class="entry-title">국토·교통 데이터 활용 경진대회</div>
+        <div class="entry-org">팀 UAIN · 한국공항공사 사장상(우수상)</div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">OpenCV</span><span
+            class="tag">QGIS</span><span class="tag">회귀분석</span></div>
+        <p class="entry-lead">UAM 항로 설계 단계에서 주변 지역의 소음 영향을 비교할 수 있도록, 실측 항공소음 데이터와 건물 용도 정보를 결합한 소음 분석 모델을 제안했습니다.</p>
+        <ul>
+          <li>광역교통 수요 데이터를 바탕으로 UAM 수요가 집중될 서울 도심의 강남·홍대입구·서울역을 분석 지점으로 선정</li>
+          <li>QGIS로 건물 용도별 비율을 지도화하고, 주거·상업지역의 소음 기준을 바탕으로 지역별 민감도 가중치 산정</li>
+          <li>김포공항 실측 항공소음 기반 다항 회귀모델과 UAM 소음 인증기준 기반 로그 회귀모델을 결합해 거리별 소음 예측</li>
+          <li>4개 항로 방향과 격자별 예측값을 비교해 항로 방향에 따른 소음 영향 차이를 분석</li>
+        </ul>
+        <p class="entry-outcome">서울역의 평균 이상 소음 가중치 영역 비율은 동서 항로 39.7%, 남서–북동 항로 31.8%로 나타났습니다. 분석 결과를 항로 설계와 소음대책지역 검토에
+          활용할 수 있는 기준으로 제안해 한국공항공사 사장상을 수상했습니다.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-eyebrow"><span>협력 자율주행</span><span class="entry-date">2025.10 – 2026.02</span></div>
+        <div class="entry-title">KAIST 모빌리티 챌린지 본선진출상</div>
+        <div class="entry-org">팀 카스피 · V2V/V2I 협력 자율주행 및 LiDAR</div>
+        <div class="tags"><span class="tag">V2V·V2I</span><span class="tag">LiDAR</span><span class="tag">우선순위
+            알고리즘</span></div>
+        <p class="entry-lead">여러 차량이 교차로에 동시에 접근할 때 충돌 없이 통과할 수 있도록, 차량 간 정보를 바탕으로 통행 순서를 정하는 우선순위 판단 알고리즘을 담당했습니다.</p>
+        <ul>
+          <li>LiDAR 센서를 활용한 소형 차량의 협력 자율주행 구현에 참여</li>
+          <li>차량 간 위치·속도 데이터를 바탕으로 교차로 통행 우선순위를 결정하는 알고리즘 설계</li>
+          <li>다수 차량이 동시에 진입하는 상황을 구성해 충돌 없이 통과하는지 로직 검증</li>
+        </ul>
+        <p class="entry-outcome">KAIST 모빌리티 연구소장 본선진출상을 수상했습니다. 개별 차량의 판단뿐 아니라 차량 간 정보 공유와 우선순위 조정이 협력 자율주행에서 중요하다는 점을
+          확인했습니다.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-eyebrow"><span>커뮤니케이션 · 운영 지원</span><span class="entry-date">2024.03 – 2026.06</span></div>
+        <div class="entry-title">인하대학교 국제학부 SGCS 근로장학생</div>
+        <div class="entry-org">외국인 학생 응대 및 행사 지원</div>
+        <p class="entry-lead">외국인 학생이 한국 생활과 학사 행정에서 겪는 문제를 파악하고, 정확한 정보를 이해하기 쉬운 영어로 전달하는 역할을 맡았습니다.</p>
+        <ul>
+          <li>비자 연장과 주거 등 한국 생활에 필요한 행정 절차를 영어로 안내</li>
+          <li>확실하지 않은 사항은 담당 부서에 확인한 뒤 전달하고, 약속한 처리 기한을 지키며 신뢰 형성</li>
+          <li>다양한 국적의 학생 및 교직원과 협업하며 상황에 맞는 커뮤니케이션 역량 강화</li>
+        </ul>
+        <p class="entry-outcome">학생들이 담당자가 자리를 비운 뒤에도 저를 찾아올 만큼 신뢰를 쌓았으며, 담당 교직원으로부터 어디서든 환영받을 사람이라는 평가를 받았습니다. 상대방의
+          상황부터 확인하는 태도는 이후 금융 서비스 개선 과제에서도 이어졌습니다.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-eyebrow"><span>AI · 백엔드</span><span class="entry-date">2026.03 – 2026.06</span></div>
+        <div class="entry-title">FollowMe — 일기 기반 개인화 예측 서비스</div>
+        <div class="entry-org">졸업 캡스톤 팀 프로젝트 · 서버 및 RAG 설계</div>
+        <div class="tags"><span class="tag">FastAPI</span><span class="tag">AWS EC2</span><span
+            class="tag">FAISS</span><span class="tag">MiniLM</span><span class="tag">GPT API</span></div>
+        <p class="entry-lead">8년간 일기를 기록하며 컨디션과 상황을 고려하지 않은 계획은 지키기 어렵다는 점을 체감한 데서 출발했습니다. 과거 기록을 검색해 다음 날을 예측하고 미션을
+          제안하는 서비스에서 서버와 RAG 구조 설계를 담당했습니다.</p>
+        <ul>
+          <li>앱은 입력과 화면 표시를 담당하고, AWS EC2의 FastAPI 서버가 임베딩·벡터 검색·GPT API 호출을 처리하도록 역할을 분리</li>
+          <li>성향 점수 대신 일기 텍스트를 검색 대상으로 삼아 과거의 감정과 상황이 담긴 기록을 예측 근거로 활용</li>
+          <li>당일 일기를 쿼리로 FAISS에서 L2 거리 기반 검색을 수행하고, 유사한 과거 기록을 GPT 프롬프트에 포함해 자정 예측 실행</li>
+          <li>한국어 처리, CPU 기반 EC2 구동, 문장 유사도를 고려해 paraphrase-multilingual-MiniLM-L12-v2(384차원)를 선정하고 배포</li>
+          <li>전화번호·주민등록번호 등 민감정보를 정규식으로 마스킹하고, 미션 완료에 따라 성향 점수가 갱신되어 다음 예측에 반영되는 구조 구현</li>
+        </ul>
+        <p class="entry-outcome">같은 수업 수강생 30명이 한 달간 사용했습니다. 사용자별 기록에 따라 검색되는 과거 사례와 예측 근거가 달라지는 개인화 흐름을 실제 사용 환경에서
+          확인했습니다.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-eyebrow"><span>컴퓨터 비전</span><span class="entry-date">2024년 1학기</span></div>
+        <div class="entry-title">CVIP 컴퓨터비전 연구실 학부연구생</div>
+        <div class="entry-org">실시간 인원 인식 기반 자동 온도 제어 시스템</div>
+        <div class="tags"><span class="tag">PyTorch</span><span class="tag">YOLOv5</span><span class="tag">OpenCV</span>
+        </div>
+        <p class="entry-lead">객체 인식 모델을 실제 기능으로 연결하기 위해, 강의실 인원 수에 따라 냉방 온도를 조절하는 시스템을 구현했습니다.</p>
+        <ul>
+          <li>Roboflow 공개 데이터셋으로 사람 객체 인식 학습 데이터를 구성하고 PyTorch에서 YOLOv5 모델 학습</li>
+          <li>OpenCV로 실시간 영상 스트림을 처리해 화면 속 사람 수를 계산</li>
+          <li>인원 수에 따라 목표 온도를 계산하고 에어컨 API에 전달하는 제어 흐름 구현</li>
+          <li>관련 모델 구조를 이해하기 위해 FPN과 Focal Loss 등 객체 탐지 기법으로 학습 범위 확장</li>
+        </ul>
+        <p class="entry-outcome">객체 탐지 모델의 출력값을 온도 제어 기능으로 연결하며, 모델 성능뿐 아니라 예측 결과를 실제 서비스에서 어떻게 활용할지도 함께 고려했습니다.</p>
+      </div>
 
 
 
@@ -370,59 +649,62 @@
 
 
 
-</section>
-<section class="block" id="skills">
-<h2 class="section">기술</h2>
-<dl class="skills-grid">
-<dt>프로그래밍 언어</dt>
-<dd>C/C++, Python, Java</dd>
-<dt>임베디드 · 시스템</dt>
-<dd>CAN/CANopen, Linux(Ubuntu), GDB, CMake, Git/GitHub, ROS2</dd>
-<dt>AI · 백엔드</dt>
-<dd>PyTorch, OpenCV, YOLOv5, FastAPI, GPT API, Sentence Transformers(MiniLM), FAISS</dd>
-<dt>데이터 · 인프라</dt>
-<dd>AWS EC2, QGIS, CUDA, OpenMP</dd>
-<dt>개발 도구</dt>
-<dd>Claude Code</dd>
-</dl>
-</section>
-<section class="block" id="education">
-<h2 class="section">학력</h2>
-<div class="edu-item">
-<div class="edu-school">인하대학교 컴퓨터공학과</div>
-<div class="edu-gpa">GPA 4.02 / 4.5</div>
-<div class="edu-detail">
-<strong>주요 이수 과목:</strong> 운영체제(A+), 컴퓨터네트워크(A+), 컴퓨터구조론(A+), 시스템프로그래밍(A+), 인공지능(A+), 현대물리학(A+), 컴퓨터기반선형대수(A+), 자바기반응용프로그래밍(A+), 리눅스 프로그래밍(A), 수리물리학(A)<br/>
-<span style="color:var(--ink-faint);">로봇의 움직임을 물리적으로 이해하고자 물리학 관련 과목도 수강했으며, 수리물리학 기말고사에서 분반 1위를 기록했습니다.</span>
-</div>
-</div>
-</section>
-<section class="block two-col" id="credentials">
-<div class="list-block">
-<h2 class="section">자격증</h2>
-<ul>
-<li><strong>정보처리기사</strong></li>
-<li><strong>TOPCIT Practitioner</strong> (Lv.3, 501점)</li>
-<li><strong>한국사능력검정시험</strong> 1급</li>
-<li><strong>운전면허</strong> 1종 보통·대형, 2종 소형</li>
-</ul>
-</div>
-<div class="list-block">
-<h2 class="section">수상 및 장학금</h2>
-<ul>
-<li>인하대 소프트웨어융합대학 성적우수상 (2026)</li>
-<li>울산연구원 우수장학금 (2025-1, 2025-2, 2026-1)</li>
-<li>KAIST 모빌리티 챌린지 본선진출상 (2026)</li>
-<li>인하대 컴퓨터공학과 성적우수 장학금 (2025-1)</li>
-<li>인하대 정석 북튜버 영상후기 공모전 장려상 (2025)</li>
-<li>해성문화재단 전액장학금 (2024-1)</li>
-<li>한국공항공사 사장상 — 국토·교통 데이터 활용 경진대회 (2024)</li>
-</ul>
-</div>
-</section>
-<footer>
-<p class="footer-note">hynsxo.github.io</p>
-</footer>
-</div>
+    </section>
+    <section class="block" id="skills">
+      <h2 class="section">기술</h2>
+      <dl class="skills-grid">
+        <dt>프로그래밍 언어</dt>
+        <dd>C/C++, Python, Java</dd>
+        <dt>임베디드 · 시스템</dt>
+        <dd>CAN/CANopen, Linux(Ubuntu), GDB, CMake, Git/GitHub, ROS2</dd>
+        <dt>AI · 백엔드</dt>
+        <dd>PyTorch, OpenCV, YOLOv5, FastAPI, GPT API, Sentence Transformers(MiniLM), FAISS</dd>
+        <dt>데이터 · 인프라</dt>
+        <dd>AWS EC2, QGIS, CUDA, OpenMP</dd>
+        <dt>개발 도구</dt>
+        <dd>Claude Code</dd>
+      </dl>
+    </section>
+    <section class="block" id="education">
+      <h2 class="section">학력</h2>
+      <div class="edu-item">
+        <div class="edu-school">인하대학교 컴퓨터공학과</div>
+        <div class="edu-gpa">GPA 4.02 / 4.5</div>
+        <div class="edu-detail">
+          <strong>주요 이수 과목:</strong> 운영체제(A+), 컴퓨터네트워크(A+), 컴퓨터구조론(A+), 시스템프로그래밍(A+), 인공지능(A+), 현대물리학(A+),
+          컴퓨터기반선형대수(A+), 자바기반응용프로그래밍(A+), 리눅스 프로그래밍(A), 수리물리학(A)<br />
+          <span style="color:var(--ink-faint);">로봇의 움직임을 물리적으로 이해하고자 물리학 관련 과목도 수강했으며, 수리물리학 기말고사에서 분반 1위를
+            기록했습니다.</span>
+        </div>
+      </div>
+    </section>
+    <section class="block two-col" id="credentials">
+      <div class="list-block">
+        <h2 class="section">자격증</h2>
+        <ul>
+          <li><strong>정보처리기사</strong></li>
+          <li><strong>TOPCIT Practitioner</strong> (Lv.3, 501점)</li>
+          <li><strong>한국사능력검정시험</strong> 1급</li>
+          <li><strong>운전면허</strong> 1종 보통·대형, 2종 소형</li>
+        </ul>
+      </div>
+      <div class="list-block">
+        <h2 class="section">수상 및 장학금</h2>
+        <ul>
+          <li>인하대 소프트웨어융합대학 성적우수상 (2026)</li>
+          <li>울산연구원 우수장학금 (2025-1, 2025-2, 2026-1)</li>
+          <li>KAIST 모빌리티 챌린지 본선진출상 (2026)</li>
+          <li>인하대 컴퓨터공학과 성적우수 장학금 (2025-1)</li>
+          <li>인하대 정석 북튜버 영상후기 공모전 장려상 (2025)</li>
+          <li>해성문화재단 전액장학금 (2024-1)</li>
+          <li>한국공항공사 사장상 — 국토·교통 데이터 활용 경진대회 (2024)</li>
+        </ul>
+      </div>
+    </section>
+    <footer>
+      <p class="footer-note">hynsxo.github.io</p>
+    </footer>
+  </div>
 </body>
+
 </html>
