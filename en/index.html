@@ -596,10 +596,8 @@
     </nav>
     <section class="block about" id="about">
       <h2 class="section">Profile</h2>
-      <p>The arms of a drumming robot moved unnaturally at every strike. The cause was that, at the moment the control mode switched, the robot used a position value from the previous communication cycle. One suggestion was to shorten the communication cycle itself. Instead, I left the working communication untouched, studied the motor protocol documentation, and made the robot re-read its latest position only at that moment, which made the motion smooth.</p>
-      <p>As an intern at IBK Industrial Bank of Korea, I wanted to know why account errors in international transfers kept recurring, so I went to the employees who handle them and asked. The validation scheme I built from their answers was adopted as an actual development item.</p>
-      <div class="thesis">When a problem appears, I first understand how the system works, then fix exactly the point where it fails while keeping what already works. I do not settle for guesses: I confirm the cause with logs, protocol documentation, and what people on the ground tell me.</div>
-      <p style="margin-top:14px;">For eight years I have kept a daily planner and diary, recording the gap between my plans and what actually happened and feeding it into the next plan. Below, for each project, I describe what the problem was, what I did, and what changed.</p>
+      <p>At KIST, I traced a drumming robot’s off-beat motion to its communication data, kept the working communication as it was, and made the robot re-read its position only at the moment it was needed. At IBK Industrial Bank of Korea, I built a validation scheme from what I heard by going to the employees who handle transfer errors, and it was adopted as a development item.</p>
+      <p>I have kept a daily planner and diary for eight years, and I solve problems by setting priorities and working in order of importance.</p>
     </section>
     <section class="block" id="projects">
       <h2 class="section">Projects &amp; Experience</h2>
@@ -611,16 +609,15 @@
         <div class="entry-org">10-DOF Dual-Arm Drumming Robot</div>
         <div class="tags"><span class="tag">C/C++</span><span class="tag">CANopen</span><span class="tag">GDB</span>
         </div>
-        <p class="entry-lead">I developed a 10-DOF dual-arm robot that reads a score and plays the drums. At every strike, though, the arm movement was slightly off and looked unnatural.</p>
+        <p class="entry-lead">I developed a 10-DOF dual-arm robot that reads a score and plays the drums. At every strike, the arm motion was slightly off.</p>
         <ul>
-          <li>Tracing the CANopen communication data and the motor-control flow, I found that at the moment a motor switched between position control and torque control, it was using not its latest position but the value from the previous 5 ms communication cycle.</li>
-          <li>One suggestion was to shorten the communication cycle from 5 ms to 1 ms. But the whole motion pipeline, which picks the next strike position from the score and computes motor targets with inverse kinematics (IK), was built around the 5 ms cycle, so changing it would have meant rewriting and re-validating the motion calculation as well.</li>
-          <li>So I studied the motor protocol documentation and focused on SDO, a request–response message that can read a value from a specific motor. I kept the existing cyclic PDO communication, which was working correctly, and designed and implemented a hybrid structure that reads the latest position over SDO only at the moment of a mode switch. Because SDO carries more overhead than PDO, I limited it to those moments.</li>
-          <li>A motion that was fine in simulation once collided on the real robot and broke an expensive part. I confirmed that the simulation did not reflect joint wear or changes in inertia, and created a three-step procedure for every new motion: verify in simulation, run on the real robot at 50% speed, then record the error and add a safety margin to the trajectory.</li>
-          <li>I also generated trajectories that reduce torso movement using Dijkstra’s algorithm and interpolation, tuned the motor PID parameters, and debugged with GDB.</li>
-          <li>I wrote up GitHub collaboration conventions and a diagram of the code flow for each performance state, and shared them with the team.</li>
+          <li>Traced the CANopen data and found that at a control-mode switch, motors used the position from the previous 5 ms cycle instead of the latest one.</li>
+          <li>Ruled out shortening the cycle to 1 ms, since the whole IK-based motion pipeline was built around 5 ms.</li>
+          <li>Kept the existing cyclic PDO communication and added SDO reads of the latest position only at mode switches (hybrid design).</li>
+          <li>After a sim-to-real collision broke a part, introduced a three-step check for new motions: simulation → 50% speed on the real robot → log errors and add trajectory margins.</li>
+          <li>Also: Dijkstra and interpolation for trajectories, PID tuning, GDB debugging, collaboration and code-flow docs.</li>
         </ul>
-        <p class="entry-outcome">The striking motion became smooth while changes to the existing control structure were kept to a minimum. After the three-step procedure was introduced there was not a single collision, and the team adopted it as its standard procedure.</p>
+        <p class="entry-outcome">Made the striking motion smooth with minimal change to the existing control structure. The three-step check led to zero collisions and became the team standard.</p>
       </div>
       <div class="entry">
         <div class="entry-eyebrow"><span>Financial Systems</span><span class="entry-date">Jul 2025 – Aug 2025</span>
@@ -629,15 +626,14 @@
         <div class="entry-org">Selected as an Outstanding Intern (33rd cohort)</div>
         <div class="tags"><span class="tag">Financial Systems Analysis</span><span class="tag">Data Flow</span><span
             class="tag">Service Design</span></div>
-        <p class="entry-lead">While learning the bank’s system architecture through regular mentoring from senior colleagues in the department, I learned that international transfers were repeatedly being cancelled because the beneficiary’s account had been entered incorrectly. Each time, both the customer and the bank bore unnecessary cancellation fees and follow-up work.</p>
+        <p class="entry-lead">International transfers were repeatedly cancelled because of wrongly entered beneficiary accounts, leaving both customers and the bank with cancellation fees and follow-up work.</p>
         <ul>
-          <li>I went to the employees who actually process these errors, asked in what situations they occur most often, and collected their pain points.</li>
-          <li>I followed the data flow through the bank’s core banking system and diagrammed the key processing steps.</li>
-          <li>Sorting the employees’ accounts and past error cases by type showed that errors kept recurring for specific combinations of country and bank code.</li>
-          <li>After comparing how other banks handle this, I designed a triple check to run before a transfer is sent: matching against past transfer history, a SWIFT API lookup, and rule-based validation of the account-number format.</li>
-          <li>I also examined how this could be connected to the existing system architecture and wrote it up as a proposal.</li>
+          <li>Went to the employees who handle these errors and asked when they occur most often.</li>
+          <li>Diagrammed the core banking system’s data flow and sorted past errors by type, finding repeats in specific country–bank-code combinations.</li>
+          <li>After comparing other banks’ approaches, designed a triple check: past transfer history · SWIFT API lookup · account-number format validation.</li>
+          <li>Reviewed integration with the existing system and wrote it up as a proposal.</li>
         </ul>
-        <p class="entry-outcome">The proposal was praised as a way to prevent cancellation fees and adopted as an actual development item, and I was selected as an Outstanding Intern of the 33rd cohort.</p>
+        <p class="entry-outcome">Praised as a way to prevent cancellation fees, the proposal was adopted as an actual development item, and I was named an Outstanding Intern of the 33rd cohort.</p>
       </div>
       <div class="entry">
         <div class="entry-eyebrow"><span>Data Analytics</span><span class="entry-date">Apr 2024 – Aug 2024</span></div>
@@ -645,16 +641,15 @@
         <div class="entry-org">Team UAIN · Korea Airports Corporation President’s Award (Excellence Prize)</div>
         <div class="tags"><span class="tag">Python</span><span class="tag">OpenCV</span><span
             class="tag">QGIS</span><span class="tag">Regression Analysis</span></div>
-        <p class="entry-lead">Urban air mobility (UAM) is forecast to operate more than 200 routes after 2035, but at the time, demonstration projects were flown only along the Han River or over open land far from the city center, so there was no way to check noise impact when designing routes over the city. Our two-person team built a noise-analysis model for this, and I was responsible for calculating each area’s noise-sensitivity weight.</p>
+        <p class="entry-lead">There was no way to check residential noise impact when designing urban air mobility (UAM) routes over the city. Our two-person team built a noise-analysis model; I handled the area noise-sensitivity weights.</p>
         <ul>
-          <li>Using metropolitan transport-demand data, we chose three sites in central Seoul where UAM demand is expected to concentrate: Gangnam, Hongik University Station, and Seoul Station.</li>
-          <li>We processed building-use data in QGIS to map the density of residential and commercial zones at each site. I built the algorithm that calculates each area’s sensitivity weight, based on the ratio between the residential and commercial noise limits in Korea’s Noise and Vibration Control Act.</li>
-          <li>My teammate handled noise prediction, building regression models from noise measured at Gimpo Airport and from the noise limits in the UAM certification standards, then combining them to estimate noise by distance.</li>
-          <li>When we tried to combine our results, they did not fit together and we disagreed. I suggested restating our shared goal in one sentence, “propose the route that causes the least noise damage to residential areas,” and drew each of our models as a diagram, side by side. Seen that way, the model missing an axis was mine: my teammate’s noise data varied with altitude, while my model gave each area a single weight.</li>
-          <li>So I split the weights by altitude, so that the same residential area becomes more sensitive the lower the aircraft passes. My teammate recalculated the noise data, originally based on conventional aircraft, for UAM vehicles.</li>
-          <li>We set four route directions around each vertiport and compared them cell by cell, entering the predicted noise and the weights into a 17-cell grid (8 cells on each side of the route).</li>
+          <li>Chose three sites from metropolitan transport-demand data: Gangnam, Hongik Univ. Station, Seoul Station.</li>
+          <li>Mapped residential and commercial density in QGIS and set area weights from the noise-limit ratio in Korea’s Noise and Vibration Control Act.</li>
+          <li>My teammate built distance-based noise regression models from Gimpo Airport measurements and UAM certification limits.</li>
+          <li>When our results didn’t fit, we compared both models side by side as diagrams; mine was missing altitude, so I split the weights by altitude.</li>
+          <li>Compared predicted noise and weights on a 17-cell grid along each of four route directions.</li>
         </ul>
-        <p class="entry-outcome">We showed in numbers that the result changes with route direction even at the same site. At Seoul Station, the share of area with an above-average noise weight was 39.7% for the east–west route and 31.8% for the southwest–northeast route. The model received the Korea Airports Corporation President’s Award (Excellence Prize).</p>
+        <p class="entry-outcome">Showed in numbers that results differ by route direction at the same site (Seoul Station, above-average noise area: 39.7% east–west vs. 31.8% southwest–northeast), winning the Korea Airports Corporation President’s Award.</p>
       </div>
       <div class="entry">
         <div class="entry-eyebrow"><span>Cooperative Autonomous Driving</span><span class="entry-date">Oct 2025 – Feb
@@ -691,15 +686,15 @@
         <div class="entry-org">Capstone Team Project · Backend and RAG Design</div>
         <div class="tags"><span class="tag">FastAPI</span><span class="tag">AWS EC2</span><span
             class="tag">FAISS</span><span class="tag">MiniLM</span><span class="tag">GPT API</span></div>
-        <p class="entry-lead">Keeping a diary every day for eight years taught me that a plan fails easily when it does not reflect how I felt the day before and on the day itself. So for our capstone project, three of us built a service that predicts a user’s next day from their past diary entries and suggests missions to act on. It consists of a Flutter app and a FastAPI server, and I designed the server and the retrieval-augmented generation (RAG) pipeline.</p>
+        <p class="entry-lead">Eight years of journaling showed me that plans ignoring my condition tend to fail. Our three-person team built a service that predicts the next day from past diary entries and suggests missions; I owned the server and RAG pipeline.</p>
         <ul>
-          <li>At first I tried to find “similar days” using structured personality scores. But the patterns people repeat are not in numbers; they are in sentences that carry emotion and context. So I redesigned the system to store diary entries as vectors in advance and, every midnight, retrieve the past entries most similar to that day’s entry as evidence for the prediction.</li>
-          <li>I implemented the search with L2 distance in FAISS, and chose paraphrase-multilingual-MiniLM-L12-v2 (384 dimensions), a lightweight multilingual embedding model that runs on an EC2 server without a GPU and supports semantic search in Korean.</li>
-          <li>We considered doing everything on the device, but dropped the idea because of response quality and memory limits. Instead, the app handles only input and display, and the server handles embedding, search, and GPT API calls.</li>
-          <li>Because the service handles personal diaries, sensitive information such as phone numbers and resident registration numbers is masked in advance with regular expressions.</li>
-          <li>The service analyzes the gap between a user’s current personality scores and the “ideal self” they set, and suggests four action missions that fit into the predicted day. Completing a mission updates the scores immediately, and the update feeds into the next prediction.</li>
+          <li>Redesigned from matching days by personality scores to retrieving the diary sentences themselves (RAG).</li>
+          <li>Every midnight, retrieved the past entries most similar to the day’s entry with FAISS (L2) and added them to the GPT prompt as evidence.</li>
+          <li>Chose a lightweight multilingual MiniLM embedding model (384-dim) that supports Korean and runs on a GPU-less EC2 instance.</li>
+          <li>Dropped on-device processing for quality and memory reasons; moved embedding, search, and GPT calls to a FastAPI server.</li>
+          <li>Masked sensitive data with regex and built a self-correcting loop in which completed missions update personality scores.</li>
         </ul>
-        <p class="entry-outcome">We released the service to thirty students in the same course, who used it for a month, and based on their feedback we added the next day’s weather as an input. I learned that a service is not finished when development ends; it has to keep being improved from how it is actually used.</p>
+        <p class="entry-outcome">Thirty users used it for a month, and we added next-day weather as an input based on their feedback.</p>
       </div>
       <div class="entry">
         <div class="entry-eyebrow"><span>Computer Vision</span><span class="entry-date">Spring 2024</span></div>
@@ -743,10 +738,16 @@
           <strong>Selected Coursework:</strong> Operating Systems (A+), Computer Networks (A+), Computer Architecture
           (A+), Systems Programming (A+), Artificial Intelligence (A+), Modern Physics (A+), Computer-Based Linear
           Algebra (A+), Java Application Programming (A+), Computer Engineering Capstone Design (A+), Parallel Programming (A), Linux Programming (A), Mathematical Physics (A)<br />
-          <span style="color:var(--ink-faint);">While building the robot at KIST, I realized that robots ultimately move on mathematics and physics, so I took major courses in the Department of Physics and ranked first in my section on the final exam. I also attended a quantum computing colloquium.</span>
+          <span style="color:var(--ink-faint);">To understand robot motion, I took major courses in the Department of Physics, ranking first in my section on the final exam, and attended a quantum computing colloquium.</span>
         </div>
-        <div class="edu-detail">
-          <strong>Built and practiced hands-on:</strong> In Parallel Programming, I parallelized big-number multiplication without locking the result array: each thread accumulated into its own local buffer, and the buffers were merged at the end with carry propagation, which removed the contention altogether. For matrix multiplication, I transposed an operand to improve cache locality and used AVX2 FMA instructions to compute eight values at a time; when moving it to the GPU, simply reordering indices so that adjacent threads read consecutive addresses changed the performance. In Operating Systems, I implemented the Banker’s Algorithm for deadlock avoidance in C++. Outside class, I set up virtual routers with FRR in Docker and practiced exchanging routes between them over BGP.
+        <div class="edu-detail list-block">
+          <strong>Built and practiced hands-on</strong>
+          <ul>
+            <li>Parallel big-number multiplication: removed lock contention by accumulating into per-thread local buffers and merging with carry propagation.</li>
+            <li>Matrix multiplication: transposed for cache locality, used AVX2 FMA to compute eight values at once, and reordered GPU indices so adjacent threads read consecutive addresses.</li>
+            <li>Implemented the Banker’s Algorithm (deadlock avoidance) in C++.</li>
+            <li>Set up virtual routers with FRR in Docker and exchanged routes over BGP.</li>
+          </ul>
         </div>
       </div>
     </section>
